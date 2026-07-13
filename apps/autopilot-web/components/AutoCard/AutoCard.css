@@ -1,0 +1,32 @@
+.auto-card {
+  margin: 34px auto 0;
+  max-width: 520px;
+  padding: 20px 22px;
+  border-radius: 22px;
+  background: rgba(245, 251, 255, 0.9);
+  border: 1px solid rgba(3, 169, 244, 0.18);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.8);
+}
+
+.auto-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #1565c0, #03a9f4);
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(21, 101, 192, 0.22);
+  flex: 0 0 46px;
+}
+
+.auto-name {
+  margin: 0;
+  font-weight: 800;
+  color: #006da8;
+}
+
+.auto-text {
+  margin: 2px 0 0;
+  color: #334155;
+}

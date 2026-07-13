@@ -1,0 +1,16 @@
+:root {
+  --ap-primary: #1565c0;
+  --ap-primary-light: #03a9f4;
+  --ap-success: #2e7d32;
+  --ap-warning: #f9a825;
+  --ap-danger: #c62828;
+
+  --ap-bg: #f5f7fa;
+  --ap-text: #263238;
+  --ap-dark: #071224;
+  --ap-muted: #607d8b;
+
+  --ap-radius-lg: 28px;
+  --ap-radius-md: 18px;
+  --ap-shadow: 0 28px 80px rgba(21, 101, 192, 0.18);
+}
