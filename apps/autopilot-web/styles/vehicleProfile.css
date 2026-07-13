@@ -1,0 +1,135 @@
+.vehicle-profile-screen {
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: grid;
+    place-items: center;
+}
+
+.vehicle-profile-shell {
+    width: min(780px, 100%);
+    padding: clamp(24px, 5vw, 42px);
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(21, 101, 192, 0.12);
+    border-radius: var(--ap-radius-lg);
+    box-shadow: var(--ap-shadow);
+}
+
+.vehicle-profile-header h1 {
+    margin: 14px 0 8px;
+    color: var(--ap-dark);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.vehicle-profile-header p {
+    margin: 0;
+    color: var(--ap-muted);
+    line-height: 1.7;
+}
+
+.vehicle-profile-badge {
+    display: inline-flex;
+    padding: 7px 12px;
+    color: #006da8;
+    background: rgba(3, 169, 244, 0.1);
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.vehicle-profile-current,
+.vehicle-profile-message {
+    margin-top: 24px;
+    padding: 14px 16px;
+    border-radius: 14px;
+}
+
+.vehicle-profile-current {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #0f5132;
+    background: #e9f8f0;
+}
+
+.vehicle-profile-message-error {
+    color: #842029;
+    background: #f8d7da;
+}
+
+.vehicle-profile-message-success {
+    color: #0f5132;
+    background: #d1e7dd;
+}
+
+#vehicle-profile-form {
+    margin-top: 28px;
+}
+
+.vehicle-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.vehicle-profile-field-wide {
+    grid-column: 1 / -1;
+}
+
+.vehicle-profile-field label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--ap-dark);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.vehicle-profile-field .form-control {
+    min-height: 48px;
+    border-color: #d6e2ef;
+    border-radius: 12px;
+}
+
+.vehicle-profile-field [aria-invalid="true"] {
+    border-color: var(--ap-danger);
+}
+
+.vehicle-profile-error {
+    min-height: 20px;
+    margin-top: 5px;
+    display: block;
+    color: var(--ap-danger);
+    font-size: 0.8rem;
+}
+
+.vehicle-profile-actions {
+    margin-top: 12px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+@media (max-width: 640px) {
+    .vehicle-profile-screen {
+        padding: 18px 12px;
+    }
+
+    .vehicle-profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vehicle-profile-field-wide {
+        grid-column: auto;
+    }
+
+    .vehicle-profile-actions {
+        flex-direction: column-reverse;
+    }
+
+    .vehicle-profile-actions .btn {
+        width: 100%;
+    }
+}

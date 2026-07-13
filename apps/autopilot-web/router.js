@@ -15,6 +15,11 @@ import {
     bindCockpitScreenEvents
 } from "./screens/CockpitScreen.js";
 
+import {
+    renderVehicleProfileScreen,
+    bindVehicleProfileScreenEvents
+} from "./screens/VehicleProfileScreen.js";
+
 export const AppState = {
     currentScreen: "landing",
     answers: {}
@@ -65,8 +70,13 @@ export function renderApp() {
             });
 
             bindCockpitScreenEvents();
-            break;      
-                  
+            break;
+
+        case "vehicle-profile":
+            app.innerHTML = renderVehicleProfileScreen();
+            bindVehicleProfileScreenEvents();
+            break;
+
         default:
             AppState.currentScreen = "landing";
             renderApp();
