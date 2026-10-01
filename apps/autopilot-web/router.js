@@ -1,8 +1,10 @@
 import { renderLanding } from "./screens/landingScreen.js";
+import { loadVehicleProfile } from "./vehicle/vehicleStorage.js";
 
 import {
     renderQuestionScreen,
-    bindQuestionScreenEvents
+    bindQuestionScreenEvents,
+    resetQuestionScreen
 } from "./screens/questionScreen.js";
 
 import {
@@ -42,16 +44,23 @@ export function renderApp() {
             });
             break;
 
-        case "questionnaire":
-            app.innerHTML = renderQuestionScreen();
+        case "questionnaire": {
+            const vehicle = loadVehicleProfile();
+            if (!vehicle.ok || !vehicle.profile) {
+                goToScreen("vehicle-profile");
+                return;
+            }
+            app.innerHTML = renderQuestionScreen(vehicle.profile);
 
             bindQuestionScreenEvents({
+                onChooseOther: () => goToScreen("vehicle-profile"),
                 onComplete: (answers) => {
                     AppState.answers = answers;
                     goToScreen("hero");
                 }
             });
             break;
+        }
 
         case "hero":
             app.innerHTML = renderHeroScreen();
@@ -74,7 +83,9 @@ export function renderApp() {
 
         case "vehicle-profile":
             app.innerHTML = renderVehicleProfileScreen();
-            bindVehicleProfileScreenEvents();
+            bindVehicleProfileScreenEvents({
+                onSaved: () => goToScreen("questionnaire")
+            });
             break;
 
         default:
@@ -85,6 +96,10 @@ export function renderApp() {
 }
 
 export function goToScreen(screenName) {
+    if (screenName === "questionnaire") {
+        resetQuestionScreen();
+        AppState.answers = {};
+    }
     AppState.currentScreen = screenName;
     renderApp();
 }

@@ -2,7 +2,7 @@ import { isVehicleProfile } from "./vehicleModel.js";
 
 export const VEHICLE_PROFILE_STORAGE_KEY = "autopilot.vehicle-profile.v1";
 
-export function saveVehicleProfile(profile, storage = globalThis.localStorage) {
+export function saveVehicleProfile(profile, storage) {
     if (!isVehicleProfile(profile)) {
         return {
             ok: false,
@@ -11,6 +11,7 @@ export function saveVehicleProfile(profile, storage = globalThis.localStorage) {
     }
 
     try {
+        storage ??= globalThis.localStorage;
         storage.setItem(
             VEHICLE_PROFILE_STORAGE_KEY,
             JSON.stringify(profile)
@@ -25,10 +26,11 @@ export function saveVehicleProfile(profile, storage = globalThis.localStorage) {
     }
 }
 
-export function loadVehicleProfile(storage = globalThis.localStorage) {
+export function loadVehicleProfile(storage) {
     let serializedProfile;
 
     try {
+        storage ??= globalThis.localStorage;
         serializedProfile = storage.getItem(VEHICLE_PROFILE_STORAGE_KEY);
     } catch {
         return {

@@ -21,7 +21,7 @@ export function renderVehicleProfileScreen() {
         <section class="vehicle-profile-screen">
             <div class="vehicle-profile-shell">
                 <header class="vehicle-profile-header">
-                    <span class="vehicle-profile-badge">Validação técnica · Missão 2.1</span>
+                    <span class="vehicle-profile-badge">Meu veículo</span>
                     <h1>Cadastre seu veículo</h1>
                     <p>Crie o contexto automotivo que será usado pelas próximas experiências do AutoPilot AI.</p>
                 </header>
@@ -56,7 +56,7 @@ export function renderVehicleProfileScreen() {
     `;
 }
 
-export function bindVehicleProfileScreenEvents() {
+export function bindVehicleProfileScreenEvents({ onSaved } = {}) {
     const form = document.getElementById("vehicle-profile-form");
     const submitButton = document.getElementById("vehicle-profile-submit");
 
@@ -102,6 +102,10 @@ export function bindVehicleProfileScreenEvents() {
         }
 
         showMessage("Veículo salvo com sucesso neste dispositivo.", "success");
+        if (typeof onSaved === "function") {
+            onSaved();
+            return;
+        }
         form.reset();
         showPersistedProfile();
         submitButton.textContent = "Veículo salvo";

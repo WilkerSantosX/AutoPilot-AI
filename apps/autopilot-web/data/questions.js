@@ -5,7 +5,7 @@ export const Questions = [
         subtitle: "Se você já possui um veículo cadastrado, basta selecioná-lo.",
         type: "vehicle",
         options: [
-            "Renault Clio 2001 RT 1.0 16V",
+            "Usar este veículo",
             "Escolher outro"
         ]
     },
