@@ -1,12 +1,12 @@
 # Missão 02.4 — Meu cockpit: veículo e respostas reais
 
-> Status: Approved
+> Status: Completed
 > Projeto: AutoPilot AI
 > Sprint: 02
 > Responsáveis: PO — Wilker; Tech Lead — ChatGPT; execução — Codex
 > Protocolo: docs/governance/mission-handoff-protocol.md
 > Aprovação: recorte aprovado explicitamente pelo PO Wilker em 2026-10-03 (America/Sao_Paulo).
-> Execução autorizada exclusivamente no recorte e nas condições deste contrato.
+> Execução encerrada e resultado aceito pelo PO/Tech Lead; este contrato não autoriza nova missão.
 
 ## Objetivo
 
@@ -133,3 +133,15 @@ Separar fatos, decisões e recomendações. Incluir:
 Codex entrega URLs do commit funcional, relatório e HEAD documental.
 ChatGPT revisa diretamente o relatório, diff e estado remoto; PO/Tech Lead aceitam ou solicitam correção.
 Somente após aceite formal a missão passa a Completed e o Trello reflete conclusão.
+
+## Fechamento formal — 2026-10-03
+
+Resultado aprovado explicitamente pelo PO Wilker após parecer técnico favorável do Tech Lead sobre relatório e diff publicados.
+
+- Contrato executado: 470d6f629c42d4086159d152302224af959d04bc.
+- Implementação aceita: 7267b25aa21b998fc4df92b67f03e00f64de1530.
+- Commit documental da execução: 353435a236c17dc87eb313bcc76714c9a06e3bae.
+- Relatório: docs/sprints/sprint-02/reports/mission-02.4-report.md.
+- Evidências do Codex: 19 testes aprovados; AC01–AC12 PASS; dois percursos de navegador e inspeção desktop/mobile. Tech Lead revisou código/relatório remotamente, sem reexecutar testes/navegador.
+- Limites aceitos: respostas em memória, resumo sem diagnóstico e ações futuras dos cartões não implementadas.
+- Missão 02.4 formalmente concluída. Missões 02.5/02.6 não autorizadas por este fechamento.
