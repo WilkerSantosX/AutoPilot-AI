@@ -25,6 +25,17 @@ A experiência deve descrever organização de informações, sem alegar diagnó
 - Confirmar ambos os SHAs como ancestrais do HEAD e a presença da versão Approved desta missão.
 - Registrar o SHA exato do contrato Approved usado na execução. Se houver mudanças remotas inesperadas, divergência ou alterações locais alheias, parar e reportar.
 
+## Resolução explícita do conflito — quilometragem
+
+Decisão do Tech Lead em 2026-10-03, fundada no recorte já aprovado pelo PO (item 3 e AC02):
+a quilometragem válida é um número inteiro maior ou igual a zero. Zero é um valor válido e deve ser preservado no cadastro, persistência, leitura e apresentação.
+
+Para a Missão 02.4, esta decisão substitui expressamente qualquer regra anterior que exija quilometragem estritamente maior que zero. A substituição é limitada a essa desigualdade; não altera a precedência geral de AGENTS.md nem afasta outros conflitos documentais.
+
+O código atual em apps/autopilot-web/vehicle/vehicleValidator.js já exige inteiro e rejeita negativos, aceitando zero. Reutilizar essa validação sem endurecê-la para > 0, sem alterar schema/chave e sem ampliar o escopo numérico desta missão.
+
+Codex deve registrar no relatório o caminho e o trecho do documento anterior que motivou a parada, esta resolução e o SHA revisado do contrato. Documentos históricos permanecem preservados. Este conflito específico está resolvido; a execução pode ser retomada após sincronização segura e verificação das demais precondições.
+
 ## Fatos observados na preparação
 
 - router.js já exige perfil válido para o questionário e armazena respostas da sessão em AppState.answers.
