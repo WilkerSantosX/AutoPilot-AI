@@ -1,12 +1,12 @@
 # Missão 02.4 — Meu cockpit: veículo e respostas reais
 
-> Status: Draft
+> Status: Approved
 > Projeto: AutoPilot AI
 > Sprint: 02
 > Responsáveis: PO — Wilker; Tech Lead — ChatGPT; execução — Codex
 > Protocolo: docs/governance/mission-handoff-protocol.md
-> Aprovação: pendente de aceite explícito do PO para este recorte.
-> Este documento não autoriza execução enquanto permanecer Draft.
+> Aprovação: recorte aprovado explicitamente pelo PO Wilker em 2026-10-03 (America/Sao_Paulo).
+> Execução autorizada exclusivamente no recorte e nas condições deste contrato.
 
 ## Objetivo
 
@@ -34,7 +34,7 @@ A experiência deve descrever organização de informações, sem alegar diagnó
 - O questionário contém seleção do veículo, objetivo e urgência. Não coleta nome do usuário.
 - A 02.3 não integrou Hero/Cockpit nem persistiu respostas.
 
-## Escopo proposto para aprovação
+## Escopo aprovado
 
 1. Reutilizar loadVehicleProfile/isVehicleProfile e a chave autopilot.vehicle-profile.v1 como única fonte persistente do veículo.
 2. Passar ao cockpit os dados reais do perfil válido e as respostas reais da sessão, sem criar cópia persistente de veículo ou respostas.
