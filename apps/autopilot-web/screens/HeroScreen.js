@@ -4,19 +4,19 @@ const heroSteps = [
         progress: 20
     },
     {
-        label: "Entendendo sua necessidade...",
+        label: "Reunindo seu objetivo e sua urgência...",
         progress: 45
     },
     {
-        label: "Analisando o contexto do veículo...",
+        label: "Organizando as informações do veículo...",
         progress: 70
     },
     {
-        label: "Preparando uma orientação personalizada...",
+        label: "Preparando o resumo da sessão...",
         progress: 92
     },
     {
-        label: "Análise concluída.",
+        label: "Resumo preparado.",
         progress: 100
     }
 ];
@@ -35,7 +35,7 @@ export function renderHeroScreen() {
                 </span>
 
                 <h1 class="hero-moment-title">
-                    Estou analisando tudo para você.
+                    Estou organizando suas informações.
                 </h1>
 
                 <p
@@ -43,7 +43,7 @@ export function renderHeroScreen() {
                     id="heroMomentStatus"
                     aria-live="polite"
                 >
-                    Iniciando análise...
+                    Preparando seu resumo...
                 </p>
 
                 <div
@@ -60,7 +60,7 @@ export function renderHeroScreen() {
                 </div>
 
                 <p class="hero-moment-final-message" id="heroMomentFinalMessage">
-                    Entendido. Já sei como posso ajudar.
+                    Suas informações estão reunidas para o cockpit.
                 </p>
 
             </div>

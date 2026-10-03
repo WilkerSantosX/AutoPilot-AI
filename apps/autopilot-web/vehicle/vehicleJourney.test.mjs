@@ -5,6 +5,9 @@ import { loadVehicleProfile, saveVehicleProfile } from "./vehicleStorage.js";
 import { goToScreen, AppState } from "../router.js";
 import { bindVehicleProfileScreenEvents } from "../screens/VehicleProfileScreen.js";
 import { renderQuestionScreen, resetQuestionScreen } from "../screens/questionScreen.js";
+import { Questions } from "../data/questions.js";
+import { renderCockpitScreen } from "../screens/CockpitScreen.js";
+import { renderHeroScreen } from "../screens/HeroScreen.js";
 
 const input = { manufacturer: "Toyota", model: "Corolla", year: "2020",
     engine: "2.0", fuelType: "Flex", mileage: "0", nickname: "" };
@@ -28,10 +31,13 @@ function setup(t) {
     options[1].dataset.answer = "Escolher outro";
     let serialized = null;
     const storage = { getItem() { return serialized; }, setItem(key, value) { serialized = value; } };
-    globalThis.document = { getElementById: id => nodes.get(id), querySelectorAll: () => options };
+    globalThis.document = { getElementById: id => nodes.get(id), querySelectorAll: () => options,
+        querySelector: () => null };
     Object.defineProperty(globalThis, "localStorage", { configurable: true, value: storage });
     globalThis.FormData = class { entries() { return Object.entries(input); } };
     resetQuestionScreen();
+    AppState.answers = {};
+    AppState.answerVehicleId = null;
     t.after(() => {
         if (originalDocument) Object.defineProperty(globalThis, "document", originalDocument);
         else delete globalThis.document;
@@ -50,6 +56,127 @@ test("entrada bloqueia perfil ausente, corrompido e inválido", t => {
         goToScreen("questionnaire");
         assert.equal(AppState.currentScreen, "vehicle-profile");
     }
+});
+
+function sessionAnswers(goal = 0, urgency = 0) {
+    return Object.fromEntries(Questions.map((question, index) => [question.id, {
+        questionId: question.id,
+        value: question.options[[0, goal, urgency][index]],
+        answeredAt: "2026-10-03T12:00:00.000Z"
+    }]));
+}
+
+test("Engine entrega respostas reais pela conclusão do questionário ao cockpit", t => {
+    const { nodes, options } = setup(t);
+    saveVehicleProfile(createVehicleProfile(input).profile);
+    goToScreen("questionnaire");
+    for (const question of Questions) {
+        options[0].dataset.answer = question.options[0];
+        options[0].handlers.click();
+        nodes.get("btn-next-question").handlers.click();
+    }
+    assert.equal(AppState.currentScreen, "hero");
+    assert.equal(AppState.answers[2].value, Questions[1].options[0]);
+    assert.equal(AppState.answers[3].value, Questions[2].options[0]);
+    goToScreen("cockpit");
+    assert.equal(AppState.currentScreen, "cockpit");
+    assert.ok(nodes.get("app").innerHTML.includes(Questions[1].options[0]));
+});
+
+test("Hero e cockpit recuperam entradas sem perfil ou respostas válidas", t => {
+    const { storage } = setup(t);
+    const read = storage.getItem;
+    for (const screen of ["hero", "cockpit"]) {
+        for (const data of [null, "{bad", JSON.stringify({ id: "bad" })]) {
+            storage.setItem("profile", data);
+            goToScreen(screen);
+            assert.equal(AppState.currentScreen, "vehicle-profile");
+            assert.deepEqual(AppState.answers, {});
+        }
+        saveVehicleProfile(createVehicleProfile(input).profile);
+        for (const invalid of [null, {}, [], { ...sessionAnswers(), 2: undefined },
+            { ...sessionAnswers(), 3: { ...sessionAnswers()[3], value: "inventado" } },
+            { ...sessionAnswers(), 1: { ...sessionAnswers()[1], value: "Escolher outro" } },
+            { ...sessionAnswers(), 2: { ...sessionAnswers()[2], questionId: 3 } },
+            { ...sessionAnswers(), 2: { ...sessionAnswers()[2], answeredAt: "invalid" } }]) {
+            goToScreen("questionnaire");
+            AppState.answers = invalid;
+            goToScreen(screen);
+            assert.equal(AppState.currentScreen, "questionnaire");
+            assert.deepEqual(AppState.answers, {});
+        }
+        storage.getItem = () => { throw new Error("blocked"); };
+        goToScreen(screen);
+        assert.equal(AppState.currentScreen, "vehicle-profile");
+        storage.getItem = read;
+    }
+});
+
+test("cockpit recebe veículo real, zero e diferentes respostas da sessão", t => {
+    const { nodes } = setup(t);
+    for (const [manufacturer, model, goal, urgency] of [
+        ["Toyota", "Corolla", 1, 0], ["Honda", "Civic", 0, 2]
+    ]) {
+        const profile = createVehicleProfile({ ...input, manufacturer, model }).profile;
+        saveVehicleProfile(profile);
+        goToScreen("questionnaire");
+        AppState.answers = sessionAnswers(goal, urgency);
+        goToScreen("hero");
+        assert.equal(AppState.currentScreen, "hero");
+        goToScreen("cockpit");
+        assert.equal(AppState.currentScreen, "cockpit");
+        const html = nodes.get("app").innerHTML;
+        assert.ok(html.includes(`${manufacturer} ${model} · 2020 · 2.0`));
+        assert.ok(html.includes("Quilometragem informada: 0 km"));
+        assert.ok(html.includes(Questions[1].options[goal]));
+        assert.ok(html.includes(Questions[2].options[urgency]));
+        assert.ok(html.includes("não constitui diagnóstico"));
+        assert.doesNotMatch(html, /Wilker|Renault Clio|Veículo estável|situação crítica|tranquilidade/);
+    }
+});
+
+test("troca de perfil durante perguntas ou Hero invalida respostas e reinicia", t => {
+    const { nodes } = setup(t);
+    for (const screen of ["hero", "cockpit"]) {
+        saveVehicleProfile(createVehicleProfile(input).profile);
+        goToScreen("questionnaire");
+        AppState.answers = sessionAnswers();
+        if (screen === "cockpit") goToScreen("hero");
+        const replacement = createVehicleProfile({ ...input, manufacturer: "Honda" }).profile;
+        saveVehicleProfile(replacement);
+        goToScreen(screen);
+        assert.equal(AppState.currentScreen, "questionnaire");
+        assert.deepEqual(AppState.answers, {});
+        assert.equal(AppState.answerVehicleId, replacement.id);
+        assert.match(nodes.get("app").innerHTML, /Pergunta 1/);
+        assert.match(nodes.get("app").innerHTML, /Honda Corolla/);
+    }
+});
+
+test("reset da jornada mantém apenas veículo persistido", t => {
+    setup(t);
+    const profile = createVehicleProfile(input).profile;
+    saveVehicleProfile(profile);
+    goToScreen("questionnaire");
+    AppState.answers = sessionAnswers();
+    goToScreen("vehicle-profile");
+    assert.deepEqual(AppState.answers, {});
+    assert.equal(AppState.answerVehicleId, null);
+    assert.equal(loadVehicleProfile().profile.id, profile.id);
+});
+
+test("cockpit escapa textos do perfil e respostas sem interpolar atributos", () => {
+    const payload = `<img src=x onerror="alert(1)"> & 'teste'`;
+    const profile = createVehicleProfile({ ...input, manufacturer: payload,
+        model: payload, engine: payload, nickname: payload }).profile;
+    const answers = sessionAnswers();
+    answers[2].value = payload;
+    answers[3].value = payload;
+    const html = renderCockpitScreen({ profile, answers });
+    assert.equal(html.includes(payload), false);
+    assert.equal(html.includes("<img"), false);
+    assert.match(html, /&lt;img src=x onerror=&quot;alert\(1\)&quot;&gt; &amp; &#39;teste&#39;/);
+    assert.doesNotMatch(renderHeroScreen(), /analisando|Iniciando análise|Já sei como posso ajudar/);
 });
 
 test("cadastro persiste zero, continua e reutiliza o mesmo perfil na reentrada", t => {

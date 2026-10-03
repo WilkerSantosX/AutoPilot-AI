@@ -1,7 +1,5 @@
-export function renderCockpitScreen({
-    userName = "Wilker",
-    vehicleName = "Renault Clio 2001 RT 1.0 16V"
-} = {}) {
+export function renderCockpitScreen({ profile, answers }) {
+    const vehicleName = escapeText(`${profile.manufacturer} ${profile.model} · ${profile.year} · ${profile.engine}`);
     const actions = [
         {
             icon: "bi-tools",
@@ -43,13 +41,15 @@ export function renderCockpitScreen({
                     </p>
 
                     <h1 class="cockpit-title">
-                        Bom te ver, ${userName}.
+                        Bom te ver por aqui.
                     </h1>
 
                     <p class="cockpit-subtitle">
                         Hoje vamos cuidar do seu
                         <strong>${vehicleName}</strong>.
                     </p>
+                    <p class="cockpit-subtitle">Quilometragem informada: ${escapeText(profile.mileage)} km</p>
+                    ${profile.nickname ? `<p class="cockpit-subtitle">Apelido: ${escapeText(profile.nickname)}</p>` : ""}
                 </header>
 
                 <section class="cockpit-status-card">
@@ -58,27 +58,28 @@ export function renderCockpitScreen({
                             <span class="cockpit-status-dot"></span>
 
                             <span>
-                                Veículo estável
+                                Informações recebidas
                             </span>
                         </div>
 
-                        <i class="bi bi-shield-check"></i>
+                        <i class="bi bi-card-text"></i>
                     </div>
 
                     <h2>
-                        Não encontrei nenhuma situação crítica.
+                        Suas respostas estão organizadas.
                     </h2>
 
                     <p>
-                        Com base nas informações que você compartilhou,
-                        podemos seguir com tranquilidade e aprofundar
-                        a análise aos poucos.
+                        Objetivo: <strong>${escapeText(answers[2].value)}</strong>
                     </p>
+                    <p>Urgência declarada: <strong>${escapeText(answers[3].value)}</strong></p>
+                    <p>A urgência foi informada por você e não é uma classificação mecânica.
+                        Este resumo organiza suas informações e não constitui diagnóstico do veículo.</p>
 
                     <div class="cockpit-status-footer">
                         <span>
                             <i class="bi bi-check-circle-fill"></i>
-                            Análise inicial concluída
+                            Resumo da sessão preparado
                         </span>
                     </div>
                 </section>
@@ -158,6 +159,13 @@ export function renderCockpitScreen({
             </div>
         </section>
     `;
+}
+
+function escapeText(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;",
+        '"': "&quot;", "'": "&#39;"
+    })[character]);
 }
 
 export function bindCockpitScreenEvents() {

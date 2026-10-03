@@ -1,5 +1,7 @@
 import { renderLanding } from "./screens/landingScreen.js";
 import { loadVehicleProfile } from "./vehicle/vehicleStorage.js";
+import { isVehicleProfile } from "./vehicle/vehicleModel.js";
+import { Questions } from "./data/questions.js";
 
 import {
     renderQuestionScreen,
@@ -24,7 +26,8 @@ import {
 
 export const AppState = {
     currentScreen: "landing",
-    answers: {}
+    answers: {},
+    answerVehicleId: null
 };
 
 export function renderApp() {
@@ -50,6 +53,7 @@ export function renderApp() {
                 goToScreen("vehicle-profile");
                 return;
             }
+            AppState.answerVehicleId = vehicle.profile.id;
             app.innerHTML = renderQuestionScreen(vehicle.profile);
 
             bindQuestionScreenEvents({
@@ -62,24 +66,26 @@ export function renderApp() {
             break;
         }
 
-        case "hero":
+        case "hero": {
+            if (!loadSessionContext()) return;
             app.innerHTML = renderHeroScreen();
 
             bindHeroScreenEvents({
                 onComplete: () => {
-                    goToScreen("cockpit");
+                    if (AppState.currentScreen === "hero") goToScreen("cockpit");
                 }
             });
             break;
+        }
 
-        case "cockpit":
-            app.innerHTML = renderCockpitScreen({
-                userName: "Wilker",
-                vehicleName: "Renault Clio 2001 RT 1.0 16V"
-            });
+        case "cockpit": {
+            const context = loadSessionContext();
+            if (!context) return;
+            app.innerHTML = renderCockpitScreen(context);
 
             bindCockpitScreenEvents();
             break;
+        }
 
         case "vehicle-profile":
             app.innerHTML = renderVehicleProfileScreen();
@@ -96,10 +102,34 @@ export function renderApp() {
 }
 
 export function goToScreen(screenName) {
-    if (screenName === "questionnaire") {
+    if (["questionnaire", "vehicle-profile", "landing"].includes(screenName)) {
         resetQuestionScreen();
         AppState.answers = {};
+        AppState.answerVehicleId = null;
     }
     AppState.currentScreen = screenName;
     renderApp();
+}
+
+function loadSessionContext() {
+    const vehicle = loadVehicleProfile();
+    if (!vehicle.ok || !isVehicleProfile(vehicle.profile)) {
+        goToScreen("vehicle-profile");
+        return null;
+    }
+    const answers = AppState.answers;
+    const complete = answers && typeof answers === "object" && !Array.isArray(answers)
+        && Questions.every(question => {
+            const answer = answers[question.id];
+            return answer?.questionId === question.id
+                && question.options.includes(answer.value)
+                && (question.type !== "vehicle" || answer.value === "Usar este veículo")
+                && typeof answer.answeredAt === "string"
+                && !Number.isNaN(Date.parse(answer.answeredAt));
+        });
+    if (AppState.answerVehicleId !== vehicle.profile.id || !complete) {
+        goToScreen("questionnaire");
+        return null;
+    }
+    return { profile: vehicle.profile, answers };
 }
