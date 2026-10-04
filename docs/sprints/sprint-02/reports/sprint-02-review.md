@@ -1,7 +1,7 @@
 # Sprint 2 — Review e proposta de fechamento
 
 Data: 2026-10-04 — America/Sao_Paulo.
-Status: Prepared — aguardando aceite final do PO e sincronização documental.
+Status: Approved — Sprint Review aceita pelo PO em 2026-10-04; integração documental pendente.
 Baseline integrada: `6e81d898b17e1465dc7a159cd5c2310d8894fef5`.
 PR de entrega: https://github.com/WilkerSantosX/AutoPilot-AI/pull/1
 
@@ -29,11 +29,11 @@ Validação: 19 testes nativos e sintaxe de 19 JS/MJS reexecutados na revisão; 
 | Integração | Merge 6e81d89 autorizado pelo PO |
 | Quality Gates | Parecer técnico favorável e aceites anteriores; não atribuir PASS indiscriminado a todos os gates |
 | Aprendizados | Registrados abaixo, aguardando integração documental |
-| Sprint Review | Síntese preparada neste documento; aceite final do PO pendente |
+| Sprint Review | Lida e aprovada pelo PO Wilker em 2026-10-04 |
 | Foundation Recovery | Reavaliada abaixo; permanece parcial |
-| Documentação sincronizada | Pendente: README, Sprint Plan e registro histórico |
+| Documentação sincronizada | README, Sprint Plan e registro histórico sincronizados na branch; integração pendente |
 
-QG-007 exige documentação sincronizada; portanto o fechamento definitivo não deve ocorrer enquanto README e Sprint Plan apresentarem estados anteriores. QG-008 tem seus aprendizados preparados aqui; publicação/integração documental e registro histórico ainda precisam ser concluídos. Este documento não promove a Sprint a Done.
+QG-007: documentos sincronizados neste pacote, integração pendente. QG-008: aprendizados e registro histórico publicados neste pacote, integração pendente. Após review e integração documental, Tech Lead deve confirmar esses gates e a transição a Done. Este documento não promove a Sprint a Done antes dessa integração.
 
 ## Decisões — aprendizados preservados
 
@@ -56,7 +56,7 @@ Permanecem ausentes os documentos estratégicos enumerados pelo índice do Proje
 
 | ID | Trabalho | Prioridade sugerida / critério |
 |---|---|---|
-| DOC-S02 | Sincronizar README, Sprint Plan e história com review/merge/fechamento | Obrigatório para fechamento documental; preservar relatórios históricos |
+| DOC-S02 | Sincronizar README, Sprint Plan e história com review/merge/fechamento | Preparado neste pacote; integração pendente; relatórios históricos preservados |
 | F01 | Fornecer favicon e verificar resposta HTTP | Baixa, Minor; manter V15 histórico |
 | GOV-REC | Inventariar e recuperar fontes estratégicas ausentes | Antes de decisões dependentes desses documentos; não inventar decisões |
 | QA-ENV | Ampliar validação de navegador, aparelho e acessibilidade | Conforme público e risco do próximo recorte |
@@ -64,8 +64,8 @@ Permanecem ausentes os documentos estratégicos enumerados pelo índice do Proje
 
 IDs acima são referências deste relatório, não cartões Trello criados. Não houve definição de Sprint 3 nem autorização de novas features.
 
-## Próximo gate concreto
+## Aceite e próximo gate
 
-PO revisa esta síntese e confirma o aceite da Sprint Review com as ressalvas existentes. Em seguida, sincronizar documentação por branch/PR documental, registrar aceite e integrar somente com autorização correspondente. O aceite deve registrar que Foundation Recovery continua parcial. Depois da integração documental, avaliar QG-007/QG-008 e formalizar Done.
+O PO Wilker leu a Sprint Review e declarou em 2026-10-04: “Li a Sprint Review e estou de acordo. Aprovado.” O aceite inclui as ressalvas registradas e a Foundation Recovery parcial.
 
-Este pacote prepara a decisão; não afirma aprovação final recebida, não muda main e não autoriza merge documental.
+README, Sprint Plan e histórico foram sincronizados nesta branch sem alteração funcional. O pacote segue para PR documental. Depois de sua revisão e autorização explícita de merge, integrar e confirmar QG-007/QG-008 para formalizar Done. O aceite da Review não autoriza sozinho o merge documental, novas features ou Sprint 3.
