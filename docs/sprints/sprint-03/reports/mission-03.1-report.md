@@ -53,11 +53,11 @@ git -c safe.directory=C:/Users/adriw/OneDrive/Documents/CodeRepos/AutoPilot-AI d
 ```
 
 - Suite completa disponível: 28 PASS, zero falhas. Cobertura inclui três famílias, fatos com e sem mileage/zero, datas separadas, entradas inválidas, múltiplos eventos/veículos, ausência, duplicidade, corrupção, versão incompatível, leitura bloqueada, escrita/quota bloqueada, getter global bloqueado e preservação do perfil.
-- Sintaxe de todos os arquivos JS/MJS da aplicação aprovada, incluindo os três novos. Whitespace sem apontamentos.
+- Sintaxe dos 22 arquivos JS/MJS da aplicação aprovada, incluindo os três novos. Whitespace sem apontamentos.
 - Servidor iniciado pelo mesmo workflow estático da Sprint 2, usando o Python existente: `python -u -m http.server 18769 --bind 127.0.0.1 --directory apps/autopilot-web`.
 - HTTP 200 para `/`, `/vehicle/careModel.js` e `/vehicle/careStorage.js`, conferidos com Invoke-WebRequest.
 - Navegador abriu `http://127.0.0.1:18769/` com título AutoPilot AI e landing/CTA Iniciar minha jornada renderizados. Consulta `tab.dev.logs({levels:['warn','error'],limit:50})` retornou `[]`.
-- F01 (favicon ausente) permanece pendência histórica da Sprint 2, sem correção incidental; a consulta de console desta rodada não mostrou erro.
+- F01 (favicon ausente) permanece pendência histórica da Sprint 2: o log HTTP registrou GET /favicon.ico 404 nesta rodada, sem correção incidental; a consulta de console não mostrou erro.
 - Navegador usado para smoke test de inicialização. O novo domínio/storage foi verificado pelos testes nativos com storage em memória; não houve novo E2E de gravação em localStorage real ou repetição completa da jornada no navegador.
 
 ## Decisões
@@ -77,7 +77,7 @@ git -c safe.directory=C:/Users/adriw/OneDrive/Documents/CodeRepos/AutoPilot-AI d
 
 ### Git e handoff
 
-Implementação e relatório devem compor o mesmo commit `feat(vehicle-care): establish care foundation`, publicado exclusivamente em `origin/feature/sprint-03-vehicle-care`, conforme seção 9 da missão.
+Implementação e relatório compõem o mesmo commit `e2048cd8c0de277f22a8455be34e288ecc965ee7`, `feat(vehicle-care): establish care foundation`. Uma complementação documental posterior registra a contagem exata da validação de sintaxe e o favicon 404 confirmado no log HTTP, sem mudança funcional ou reescrita de histórico. Publicação exclusivamente em `origin/feature/sprint-03-vehicle-care`, conforme seção 9 da missão.
 
 Para evitar SHA autorreferente, o identificador exato do commit que contém este relatório é resolvido por:
 
