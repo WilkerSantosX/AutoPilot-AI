@@ -1,0 +1,75 @@
+[
+  {
+    "id": "R01-desktop-landing",
+    "dom": "- main:\n  - generic: \n  - text: AutoPilot AI\n  - heading \"Seu veículo. Suas respostas. Seu cockpit.\" [level=1]:\n    - text: Seu veículo.\n    - text: Suas respostas.\n    - text: Seu cockpit.\n  - paragraph: Cadastre seu veículo e organize seu objetivo e sua urgência em um resumo. Esta experiência não realiza diagnóstico automotivo.\n  - button \" Iniciar minha jornada\":\n    - generic: \n    - text: Iniciar minha jornada\n  - generic: \n  - heading \"Sem criar conta\" [level=3]\n  - generic: \n  - heading \"Perfil salvo neste dispositivo\" [level=3]\n  - generic: \n  - heading \"Resumo das suas respostas\" [level=3]\n  - generic: \n  - paragraph: Auto\n  - paragraph: Vamos organizar suas informações juntos."
+  },
+  {
+    "id": "R02-invalid-form",
+    "dom": "- main:\n  - generic: Meu veículo\n  - heading \"Cadastre seu veículo\" [level=1]\n  - paragraph: Crie o contexto automotivo que será usado pelas próximas experiências do AutoPilot AI.\n  - status: Revise os campos destacados antes de continuar.\n  - generic: Fabricante *\n  - textbox \"Fabricante *\" [active]:\n    - /placeholder: \"Ex.: Toyota\"\n  - generic: Informe fabricante.\n  - generic: Modelo *\n  - textbox \"Modelo *\":\n    - /placeholder: \"Ex.: Corolla\"\n  - generic: Informe modelo.\n  - generic: Ano *\n  - spinbutton \"Ano *\"\n  - generic: Informe um ano válido, usando um número inteiro.\n  - generic: Motorização *\n  - textbox \"Motorização *\":\n    - /placeholder: \"Ex.: 2.0 16V\"\n  - generic: Informe motorização.\n  - generic: Combustível *\n  - textbox \"Combustível *\":\n    - /placeholder: \"Ex.: Flex\"\n  - generic: Informe tipo de combustível.\n  - generic: Quilometragem atual *\n  - spinbutton \"Quilometragem atual *\"\n  - generic: Informe a quilometragem usando um número inteiro.\n  - generic: Apelido (opcional)\n  - textbox \"Apelido (opcional)\":\n    - /placeholder: \"Ex.: Meu companheiro\"\n  - link \"Voltar à aplicação\":\n    - /url: ./\n  - button \"Salvar veículo\""
+  },
+  {
+    "id": "R03-saved-question1",
+    "dom": "- main:\n  - heading \"Qual veículo vamos usar nesta jornada?\" [level=2]\n  - paragraph: Se você já possui um veículo cadastrado, basta selecioná-lo.\n  - button \"Toyota Corolla · 2020 · 2.0\"\n  - button \"Escolher outro\"\n  - generic: Pergunta 1 de 3\n  - generic: 33%\n  - button \"Voltar\" [disabled]\n  - button \"Continuar\" [disabled]"
+  },
+  {
+    "id": "R04-objective-copy",
+    "dom": "- main:\n  - heading \"O que você quer fazer agora?\" [level=2]\n  - paragraph: Registre seu objetivo. Ele será exibido no resumo; esta etapa não realiza a ação escolhida.\n  - button \"Entender um problema atual\"\n  - button \"Planejar a próxima revisão\"\n  - button \"Acompanhar manutenção preventiva\"\n  - button \"Aprender mais sobre meu carro\"\n  - generic: Pergunta 2 de 3\n  - generic: 67%\n  - button \"Voltar\"\n  - button \"Continuar\" [disabled]"
+  },
+  {
+    "id": "R05-urgency-copy",
+    "dom": "- main:\n  - heading \"Qual é o nível de urgência?\" [level=2]\n  - paragraph: A urgência declarada será exibida no resumo, sem avaliação mecânica.\n  - button \"Baixa — só quero me organizar\"\n  - button \"Média — percebi algo estranho\"\n  - button \"Alta — preciso resolver logo\"\n  - generic: Pergunta 3 de 3\n  - generic: 100%\n  - button \"Voltar\"\n  - button \"Finalizar\" [disabled]"
+  },
+  {
+    "id": "R06-hero",
+    "dom": "- main:\n  - generic: \n  - text: AutoPilot AI\n  - heading \"Estou organizando suas informações.\" [level=1]\n  - paragraph: Organizando suas respostas...\n  - progressbar\n  - paragraph: Suas informações estão reunidas para o cockpit."
+  },
+  {
+    "id": "R07-desktop-cockpit",
+    "dom": "- main:\n  - generic: \n  - generic: AutoPilot AI\n  - paragraph: Seu contexto automotivo\n  - heading \"Bom te ver por aqui.\" [level=1]\n  - paragraph:\n    - text: Este é o resumo da sua jornada com o\n    - strong: Toyota Corolla · 2020 · 2.0\n    - text: .\n  - paragraph: \"Quilometragem informada: 0 km\"\n  - paragraph: \"Apelido: Meu & <carro>\"\n  - generic: Informações recebidas\n  - generic: \n  - heading \"Suas respostas estão organizadas.\" [level=2]\n  - paragraph:\n    - text: \"Objetivo:\"\n    - strong: Planejar a próxima revisão\n  - paragraph:\n    - text: \"Urgência declarada:\"\n    - strong: Baixa — só quero me organizar\n  - paragraph: A urgência foi informada por você e não é uma classificação mecânica. Este resumo organiza suas informações e não constitui diagnóstico do veículo.\n  - generic: \n  - text: Resumo da sessão preparado\n  - text: Capacidades futuras\n  - heading \"Ainda indisponíveis\" [level=2]\n  - button \" Diagnóstico inteligente Em breve Capacidade futura, ainda indisponível.\" [disabled]:\n    - generic: \n    - heading \"Diagnóstico inteligente\" [level=3]\n    - text: Em breve\n    - paragraph: Capacidade futura, ainda indisponível.\n  - button \" Plano de manutenção Em breve Planejamento de revisões ainda indisponível.\" [disabled]:\n    - generic: \n    - heading \"Plano de manutenção\" [level=3]\n    - text: Em breve\n    - paragraph: Planejamento de revisões ainda indisponível.\n  - button \" Aprender sobre meu carro Em breve Conteúdo educativo ainda indisponível.\" [disabled]:\n    - generic: \n    - heading \"Aprender sobre meu carro\" [level=3]\n    - text: Em breve\n    - paragraph: Conteúdo educativo ainda indisponível.\n  - button \" Histórico Em breve Registro de eventos do veículo ainda indisponível.\" [disabled]:\n    - generic: \n    - heading \"Histórico\" [level=3]\n    - text: Em breve\n    - paragraph: Registro de eventos do veículo ainda indisponível.\n  - generic: \n  - text: Conteúdo futuro\n  - heading \"Quer conhecer melhor o seu carro?\" [level=2]\n  - paragraph: Dicas educativas são uma capacidade futura e ainda não estão disponíveis.\n  - button \"Dicas — em breve\" [disabled]\n  - generic: \n  - paragraph: O perfil do veículo fica salvo neste dispositivo. As respostas são desta sessão e precisam ser refeitas ao recarregar.",
+    "disabledActions": 4,
+    "disabledTip": 1,
+    "layout": {
+      "height": 900,
+      "scrollWidth": 1425,
+      "width": 1440
+    }
+  },
+  {
+    "id": "R08-mobile-reload",
+    "dom": "- main:\n  - generic: \n  - text: AutoPilot AI\n  - heading \"Seu veículo. Suas respostas. Seu cockpit.\" [level=1]:\n    - text: Seu veículo.\n    - text: Suas respostas.\n    - text: Seu cockpit.\n  - paragraph: Cadastre seu veículo e organize seu objetivo e sua urgência em um resumo. Esta experiência não realiza diagnóstico automotivo.\n  - button \" Iniciar minha jornada\":\n    - generic: \n    - text: Iniciar minha jornada\n  - generic: \n  - heading \"Sem criar conta\" [level=3]\n  - generic: \n  - heading \"Perfil salvo neste dispositivo\" [level=3]\n  - generic: \n  - heading \"Resumo das suas respostas\" [level=3]\n  - generic: \n  - paragraph: Auto\n  - paragraph: Vamos organizar suas informações juntos."
+  },
+  {
+    "id": "R09-reuse-profile",
+    "dom": "- main:\n  - heading \"Qual veículo vamos usar nesta jornada?\" [level=2]\n  - paragraph: Se você já possui um veículo cadastrado, basta selecioná-lo.\n  - button \"Toyota Corolla · 2020 · 2.0\"\n  - button \"Escolher outro\"\n  - generic: Pergunta 1 de 3\n  - generic: 33%\n  - button \"Voltar\" [disabled]\n  - button \"Continuar\" [disabled]"
+  },
+  {
+    "id": "R10-mobile-question",
+    "dom": "- main:\n  - heading \"O que você quer fazer agora?\" [level=2]\n  - paragraph: Registre seu objetivo. Ele será exibido no resumo; esta etapa não realiza a ação escolhida.\n  - button \"Entender um problema atual\"\n  - button \"Planejar a próxima revisão\"\n  - button \"Acompanhar manutenção preventiva\"\n  - button \"Aprender mais sobre meu carro\"\n  - generic: Pergunta 2 de 3\n  - generic: 67%\n  - button \"Voltar\"\n  - button \"Continuar\" [disabled]"
+  },
+  {
+    "id": "R11-back-restores",
+    "dom": "- main:\n  - heading \"O que você quer fazer agora?\" [level=2]\n  - paragraph: Registre seu objetivo. Ele será exibido no resumo; esta etapa não realiza a ação escolhida.\n  - button \"Entender um problema atual\"\n  - button \"Planejar a próxima revisão\"\n  - button \"Acompanhar manutenção preventiva\"\n  - button \"Aprender mais sobre meu carro\"\n  - generic: Pergunta 2 de 3\n  - generic: 67%\n  - button \"Voltar\"\n  - button \"Continuar\""
+  },
+  {
+    "id": "R12-mobile-cockpit",
+    "dom": "- main:\n  - generic: \n  - generic: AutoPilot AI\n  - paragraph: Seu contexto automotivo\n  - heading \"Bom te ver por aqui.\" [level=1]\n  - paragraph:\n    - text: Este é o resumo da sua jornada com o\n    - strong: Honda Civic · 2022 · 1.5 Turbo\n    - text: .\n  - paragraph: \"Quilometragem informada: 42000 km\"\n  - generic: Informações recebidas\n  - generic: \n  - heading \"Suas respostas estão organizadas.\" [level=2]\n  - paragraph:\n    - text: \"Objetivo:\"\n    - strong: Entender um problema atual\n  - paragraph:\n    - text: \"Urgência declarada:\"\n    - strong: Alta — preciso resolver logo\n  - paragraph: A urgência foi informada por você e não é uma classificação mecânica. Este resumo organiza suas informações e não constitui diagnóstico do veículo.\n  - generic: \n  - text: Resumo da sessão preparado\n  - text: Capacidades futuras\n  - heading \"Ainda indisponíveis\" [level=2]\n  - button \" Diagnóstico inteligente Em breve Capacidade futura, ainda indisponível.\" [disabled]:\n    - generic: \n    - heading \"Diagnóstico inteligente\" [level=3]\n    - text: Em breve\n    - paragraph: Capacidade futura, ainda indisponível.\n  - button \" Plano de manutenção Em breve Planejamento de revisões ainda indisponível.\" [disabled]:\n    - generic: \n    - heading \"Plano de manutenção\" [level=3]\n    - text: Em breve\n    - paragraph: Planejamento de revisões ainda indisponível.\n  - button \" Aprender sobre meu carro Em breve Conteúdo educativo ainda indisponível.\" [disabled]:\n    - generic: \n    - heading \"Aprender sobre meu carro\" [level=3]\n    - text: Em breve\n    - paragraph: Conteúdo educativo ainda indisponível.\n  - button \" Histórico Em breve Registro de eventos do veículo ainda indisponível.\" [disabled]:\n    - generic: \n    - heading \"Histórico\" [level=3]\n    - text: Em breve\n    - paragraph: Registro de eventos do veículo ainda indisponível.\n  - generic: \n  - text: Conteúdo futuro\n  - heading \"Quer conhecer melhor o seu carro?\" [level=2]\n  - paragraph: Dicas educativas são uma capacidade futura e ainda não estão disponíveis.\n  - button \"Dicas — em breve\" [disabled]\n  - generic: \n  - paragraph: O perfil do veículo fica salvo neste dispositivo. As respostas são desta sessão e precisam ser refeitas ao recarregar.",
+    "disabledActions": 4,
+    "disabledTip": 1,
+    "layout": {
+      "height": 844,
+      "scrollWidth": 375,
+      "width": 390
+    }
+  },
+  {
+    "id": "R13-mobile-question-recapture",
+    "dom": "- main:\n  - heading \"O que você quer fazer agora?\" [level=2]\n  - paragraph: Registre seu objetivo. Ele será exibido no resumo; esta etapa não realiza a ação escolhida.\n  - button \"Entender um problema atual\"\n  - button \"Planejar a próxima revisão\"\n  - button \"Acompanhar manutenção preventiva\"\n  - button \"Aprender mais sobre meu carro\"\n  - generic: Pergunta 2 de 3\n  - generic: 67%\n  - button \"Voltar\"\n  - button \"Continuar\" [disabled]",
+    "layout": {
+      "cardWidth": 375,
+      "height": 844,
+      "scrollWidth": 375,
+      "width": 390
+    },
+    "method": "Viewport capture after fullPage capture produced distorted layout; no application change."
+  }
+]

@@ -1,0 +1,44 @@
+Fluxo finalizado: {
+  '1': {
+    questionId: 1,
+    value: 'Usar este veículo',
+    answeredAt: '2026-10-04T17:30:12.534Z'
+  },
+  '2': {
+    questionId: 2,
+    value: 'Entender um problema atual',
+    answeredAt: '2026-10-04T17:30:12.534Z'
+  },
+  '3': {
+    questionId: 3,
+    value: 'Baixa — só quero me organizar',
+    answeredAt: '2026-10-04T17:30:12.534Z'
+  }
+}
+✔ entrada bloqueia perfil ausente, corrompido e inválido (37.9878ms)
+✔ Engine entrega respostas reais pela conclusão do questionário ao cockpit (8.2512ms)
+✔ Hero e cockpit recuperam entradas sem perfil ou respostas válidas (4.6165ms)
+✔ cockpit recebe veículo real, zero e diferentes respostas da sessão (1.5499ms)
+✔ troca de perfil durante perguntas ou Hero invalida respostas e reinicia (1.8764ms)
+✔ reset da jornada mantém apenas veículo persistido (1.3349ms)
+✔ cockpit escapa textos do perfil e respostas sem interpolar atributos (0.7549ms)
+✔ cadastro persiste zero, continua e reutiliza o mesmo perfil na reentrada (1.9718ms)
+✔ falha de escrita mantém formulário, dados e nova tentativa sem continuar (1.5654ms)
+✔ getter bloqueado de localStorage retorna erros recuperáveis (1.4217ms)
+✔ Escolher outro abre cadastro e substituição reinicia respostas (1.2066ms)
+✔ dados do perfil são escapados e não entram em atributos HTML (0.4616ms)
+✔ callback de cadastro não é chamado em reenvio duplicado (0.3962ms)
+✔ normaliza textos, números e apelido vazio (2.4513ms)
+✔ valida campos obrigatórios e limites numéricos (1.7385ms)
+✔ cria o modelo obrigatório com schemaVersion 1 (1.7459ms)
+✔ persiste e recupera um único perfil (3.5073ms)
+✔ recuperação não quebra com ausência, JSON inválido ou falha de leitura (0.4348ms)
+✔ trata falha de escrita sem lançar erro (0.3235ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 371.7076
