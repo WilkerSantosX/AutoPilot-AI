@@ -1,6 +1,6 @@
 # Missão 02.5 — Validação integrada do MVP
 
-> Status: Approved
+> Status: Completed
 > Projeto: AutoPilot AI
 > Sprint: 02
 > Responsáveis: PO — Wilker; Tech Lead — ChatGPT; execução — Codex
@@ -137,3 +137,17 @@ Evidências devem estar acessíveis ao revisor; não usar caminhos temporários 
 Tech Lead revisa relatório, evidências, diff e estado remoto. PO/Tech Lead decidem aceite e próximos passos.
 Somente após aceite formal o contrato poderá passar a Completed.
 Correções poderão compor missão posterior explicitamente aprovada; não executar 02.5.x/02.6 nem atualizar Trello nesta validação.
+
+## Fechamento formal — 2026-10-04
+
+Resultado aceito explicitamente pelo PO Wilker após parecer técnico favorável do Tech Lead. Gate aceito: **MVP_VALIDATED_WITH_RESERVATIONS**.
+
+- Contrato Approved executado e HEAD validado: 7f580f356df0202b578c6e21f2450abb01fdbdbd.
+- Código funcional preservado: 7267b25aa21b998fc4df92b67f03e00f64de1530.
+- Commit documental da execução, confirmado remotamente: a1311b6e5377a1b3cfae0858569eb17b4d9d580c.
+- Relatório: docs/sprints/sprint-02/reports/mission-02.5-report.md.
+- Resultado registrado: 19 testes nativos PASS; V01–V16 com 15 PASS e um FAIL Minor; AC01–AC07 PASS. Nenhum cenário BLOCKED ou NOT APPLICABLE.
+- Ressalva aceita: F01, favicon.ico retorna 404, sem impedir a jornada; permanece aberto para priorização futura. Aceite não transforma V15 em PASS.
+- Revisão Tech Lead: relatório, logs de testes/sintaxe/HTTP/console, observações de UI/estado, método de injeção, captura mobile e diff remoto. Diff restrito a 23 arquivos novos de relatório/evidências; aplicação e testes preservados. Testes e navegador não foram reexecutados pelo Tech Lead.
+- Limites aceitos: Chromium desktop com viewport mobile, sem aparelho físico/outros navegadores; falhas de storage sintéticas; respostas em memória; cockpit sem diagnóstico; ações futuras não implementadas.
+- Missão 02.5 formalmente concluída. Este fechamento não autoriza correções, implementação de 02.6, merge ou alteração de main.
