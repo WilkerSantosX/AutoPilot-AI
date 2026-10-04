@@ -1,3 +1,9 @@
-import { renderApp } from "./router.js";
+import { goToScreen, renderApp } from "./router.js";
 
-renderApp();
+const requestedScreen = new URLSearchParams(window.location.search).get("screen");
+
+if (requestedScreen === "vehicle-profile") {
+    goToScreen("vehicle-profile");
+} else {
+    renderApp();
+}

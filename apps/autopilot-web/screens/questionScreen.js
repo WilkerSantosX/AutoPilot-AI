@@ -1,4 +1,5 @@
 import { Questions } from "../data/questions.js";
+import { loadVehicleProfile } from "../vehicle/vehicleStorage.js";
 
 import {
     createQuestionEngine
@@ -12,8 +13,14 @@ const questionEngine = createQuestionEngine(Questions);
 
 let selectedAnswer = null;
 let currentOnComplete = null;
+let currentOnChooseOther = null;
 
-export function renderQuestionScreen() {
+export function resetQuestionScreen() {
+    questionEngine.reset();
+    selectedAnswer = null;
+}
+
+export function renderQuestionScreen(profile = loadVehicleProfile().profile) {
     const question = questionEngine.getCurrentQuestion();
 
     if (!question) {
@@ -54,7 +61,9 @@ export function renderQuestionScreen() {
                         }"
                         data-answer="${option}"
                     >
-                        ${option}
+                        ${question.type === "vehicle" && option === "Usar este veículo" && profile
+                            ? escapeText(`${profile.manufacturer} ${profile.model} · ${profile.year} · ${profile.engine}`)
+                            : option}
                     </button>
                 `).join("")}
             </div>
@@ -111,9 +120,11 @@ export function renderQuestionScreen() {
 }
 
 export function bindQuestionScreenEvents({
-    onComplete
+    onComplete,
+    onChooseOther
 } = {}) {
     currentOnComplete = onComplete;
+    currentOnChooseOther = onChooseOther;
 
     const optionButtons =
         document.querySelectorAll(".question-option");
@@ -126,6 +137,11 @@ export function bindQuestionScreenEvents({
 
     optionButtons.forEach(button => {
         button.addEventListener("click", () => {
+            if (questionEngine.getCurrentQuestion()?.type === "vehicle"
+                && button.dataset.answer === "Escolher outro") {
+                currentOnChooseOther?.();
+                return;
+            }
             selectedAnswer = button.dataset.answer;
 
             optionButtons.forEach(optionButton => {
@@ -202,6 +218,14 @@ function updateQuestionScreen() {
     app.innerHTML = renderQuestionScreen();
 
     bindQuestionScreenEvents({
-        onComplete: currentOnComplete
+        onComplete: currentOnComplete,
+        onChooseOther: currentOnChooseOther
     });
+}
+
+function escapeText(value) {
+    return value.replace(/[&<>"']/g, character => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;",
+        '"': "&quot;", "'": "&#39;"
+    })[character]);
 }

@@ -14,6 +14,7 @@
 }
 
 .cockpit-container {
+    overflow-wrap: anywhere;
     width: 100%;
     max-width: 1080px;
     margin: 0 auto;
@@ -233,7 +234,7 @@
         background 0.2s ease;
 }
 
-.cockpit-action-card:hover {
+.cockpit-action-card:not(:disabled):hover {
     transform: translateY(-3px);
 
     background: rgba(255, 255, 255, 0.095);
@@ -348,6 +349,11 @@
     font-weight: 800;
 
     cursor: pointer;
+}
+
+.cockpit-action-card:disabled,
+.cockpit-insight-button:disabled {
+    cursor: default;
 }
 
 .cockpit-footer {

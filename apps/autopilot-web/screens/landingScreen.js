@@ -14,15 +14,15 @@ export function renderLanding({
     const features = [
         {
             icon: "bi-unlock-fill",
-            title: "Sem cadastro"
+            title: "Sem criar conta"
         },
         {
             icon: "bi-mortarboard-fill",
-            title: "Explicações simples"
+            title: "Perfil salvo neste dispositivo"
         },
         {
             icon: "bi-cpu-fill",
-            title: "IA que ensina"
+            title: "Resumo das suas respostas"
         }
     ];
 
@@ -39,14 +39,14 @@ export function renderLanding({
                     </div>
 
                     <h1 class="hero-title">
-                        Seu carro<br>
-                        está tentando<br>
-                        falar com você.
+                        Seu veículo.<br>
+                        Suas respostas.<br>
+                        Seu cockpit.
                     </h1>
 
                     <p class="hero-subtitle">
-                        Descubra possíveis causas em poucos minutos,
-                        sem precisar entender de mecânica.
+                        Cadastre seu veículo e organize seu objetivo e sua urgência
+                        em um resumo. Esta experiência não realiza diagnóstico automotivo.
                     </p>
 
                     <button
@@ -55,7 +55,7 @@ export function renderLanding({
                         type="button"
                     >
                         <i class="bi bi-lightning-charge-fill me-2"></i>
-                        Iniciar Diagnóstico
+                        Iniciar minha jornada
                     </button>
 
                     <div class="benefits-grid">
@@ -73,7 +73,7 @@ export function renderLanding({
 
                     ${renderAutoCard({
                         title: "Auto",
-                        message: "Vamos descobrir isso juntos.",
+                        message: "Vamos organizar suas informações juntos.",
                         icon: "bi-chat-dots-fill"
                     })}
 
