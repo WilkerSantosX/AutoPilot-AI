@@ -1,0 +1,113 @@
+[
+  {
+    "id": "V04-negative",
+    "dom": "- main:\n  - generic: Meu veículo\n  - heading \"Cadastre seu veículo\" [level=1]\n  - paragraph: Crie o contexto automotivo que será usado pelas próximas experiências do AutoPilot AI.\n  - status: Revise os campos destacados antes de continuar.\n  - generic: Fabricante *\n  - textbox \"Fabricante *\":\n    - /placeholder: \"Ex.: Toyota\"\n    - text: Toyota\n  - generic: Modelo *\n  - textbox \"Modelo *\":\n    - /placeholder: \"Ex.: Corolla\"\n    - text: Corolla\n  - generic: Ano *\n  - spinbutton \"Ano *\": \"2020\"\n  - generic: Motorização *\n  - textbox \"Motorização *\":\n    - /placeholder: \"Ex.: 2.0 16V\"\n    - text: \"2.0\"\n  - generic: Combustível *\n  - textbox \"Combustível *\":\n    - /placeholder: \"Ex.: Flex\"\n    - text: Flex\n  - generic: Quilometragem atual *\n  - spinbutton \"Quilometragem atual *\" [active]: \"-1\"\n  - generic: A quilometragem não pode ser negativa.\n  - generic: Apelido (opcional)\n  - textbox \"Apelido (opcional)\":\n    - /placeholder: \"Ex.: Meu companheiro\"\n    - text: \"\\\"Meu\\\" & <img src=x onerror=\\\"alert(1)\\\"> São João '\"\n  - link \"Voltar à aplicação\":\n    - /url: ./\n  - button \"Salvar veículo\""
+  },
+  {
+    "id": "V04-fraction",
+    "dom": "- main:\n  - generic: Meu veículo\n  - heading \"Cadastre seu veículo\" [level=1]\n  - paragraph: Crie o contexto automotivo que será usado pelas próximas experiências do AutoPilot AI.\n  - status: Revise os campos destacados antes de continuar.\n  - generic: Fabricante *\n  - textbox \"Fabricante *\":\n    - /placeholder: \"Ex.: Toyota\"\n    - text: Toyota\n  - generic: Modelo *\n  - textbox \"Modelo *\":\n    - /placeholder: \"Ex.: Corolla\"\n    - text: Corolla\n  - generic: Ano *\n  - spinbutton \"Ano *\": \"2020\"\n  - generic: Motorização *\n  - textbox \"Motorização *\":\n    - /placeholder: \"Ex.: 2.0 16V\"\n    - text: \"2.0\"\n  - generic: Combustível *\n  - textbox \"Combustível *\":\n    - /placeholder: \"Ex.: Flex\"\n    - text: Flex\n  - generic: Quilometragem atual *\n  - spinbutton \"Quilometragem atual *\" [active]: \"1.5\"\n  - generic: Informe a quilometragem usando um número inteiro.\n  - generic: Apelido (opcional)\n  - textbox \"Apelido (opcional)\":\n    - /placeholder: \"Ex.: Meu companheiro\"\n    - text: \"\\\"Meu\\\" & <img src=x onerror=\\\"alert(1)\\\"> São João '\"\n  - link \"Voltar à aplicação\":\n    - /url: ./\n  - button \"Salvar veículo\""
+  },
+  {
+    "id": "V01-after-save",
+    "dom": "- main:\n  - heading \"Qual carro vamos analisar?\" [level=2]\n  - paragraph: Se você já possui um veículo cadastrado, basta selecioná-lo.\n  - button \"Toyota Corolla · 2020 · 2.0\"\n  - button \"Escolher outro\"\n  - generic: Pergunta 1 de 3\n  - generic: 33%\n  - button \"Voltar\" [disabled]\n  - button \"Continuar\" [disabled]"
+  },
+  {
+    "id": "V05-after-save-reload",
+    "dom": "- main:\n  - generic: \n  - text: AutoPilot AI\n  - heading \"Seu carro está tentando falar com você.\" [level=1]:\n    - text: Seu carro\n    - text: está tentando\n    - text: falar com você.\n  - paragraph: Descubra possíveis causas em poucos minutos, sem precisar entender de mecânica.\n  - button \" Iniciar Diagnóstico\":\n    - generic: \n    - text: Iniciar Diagnóstico\n  - generic: \n  - heading \"Sem cadastro\" [level=3]\n  - generic: \n  - heading \"Explicações simples\" [level=3]\n  - generic: \n  - heading \"IA que ensina\" [level=3]\n  - generic: \n  - paragraph: Auto\n  - paragraph: Vamos descobrir isso juntos."
+  },
+  {
+    "id": "V05-question-reload",
+    "dom": "- main:\n  - generic: \n  - text: AutoPilot AI\n  - heading \"Seu carro está tentando falar com você.\" [level=1]:\n    - text: Seu carro\n    - text: está tentando\n    - text: falar com você.\n  - paragraph: Descubra possíveis causas em poucos minutos, sem precisar entender de mecânica.\n  - button \" Iniciar Diagnóstico\":\n    - generic: \n    - text: Iniciar Diagnóstico\n  - generic: \n  - heading \"Sem cadastro\" [level=3]\n  - generic: \n  - heading \"Explicações simples\" [level=3]\n  - generic: \n  - heading \"IA que ensina\" [level=3]\n  - generic: \n  - paragraph: Auto\n  - paragraph: Vamos descobrir isso juntos."
+  },
+  {
+    "id": "V05-restart-clean",
+    "dom": "- main:\n  - heading \"Qual carro vamos analisar?\" [level=2]\n  - paragraph: Se você já possui um veículo cadastrado, basta selecioná-lo.\n  - button \"Toyota Corolla · 2020 · 2.0\"\n  - button \"Escolher outro\"\n  - generic: Pergunta 1 de 3\n  - generic: 33%\n  - button \"Voltar\" [disabled]\n  - button \"Continuar\" [disabled]"
+  },
+  {
+    "id": "V11-back",
+    "dom": "- main:\n  - heading \"O que você quer fazer agora?\" [level=2]\n  - paragraph: Escolha o tipo de análise que mais combina com sua necessidade.\n  - button \"Entender um problema atual\"\n  - button \"Planejar a próxima revisão\"\n  - button \"Acompanhar manutenção preventiva\"\n  - button \"Aprender mais sobre meu carro\"\n  - generic: Pergunta 2 de 3\n  - generic: 67%\n  - button \"Voltar\"\n  - button \"Continuar\""
+  },
+  {
+    "id": "V13-hero",
+    "dom": "- main:\n  - generic: \n  - text: AutoPilot AI\n  - heading \"Estou organizando suas informações.\" [level=1]\n  - paragraph: Organizando suas respostas...\n  - progressbar\n  - paragraph: Suas informações estão reunidas para o cockpit."
+  },
+  {
+    "id": "V01-V03-V12-V13-desktop-cockpit",
+    "dom": "- main:\n  - generic: \n  - generic: AutoPilot AI\n  - paragraph: Seu copiloto automotivo\n  - heading \"Bom te ver por aqui.\" [level=1]\n  - paragraph:\n    - text: Hoje vamos cuidar do seu\n    - strong: Toyota Corolla · 2020 · 2.0\n    - text: .\n  - paragraph: \"Quilometragem informada: 0 km\"\n  - paragraph: \"Apelido: \\\"Meu\\\" & <img src=x onerror=\\\"alert(1)\\\"> São João '\"\n  - generic: Informações recebidas\n  - generic: \n  - heading \"Suas respostas estão organizadas.\" [level=2]\n  - paragraph:\n    - text: \"Objetivo:\"\n    - strong: Planejar a próxima revisão\n  - paragraph:\n    - text: \"Urgência declarada:\"\n    - strong: Baixa — só quero me organizar\n  - paragraph: A urgência foi informada por você e não é uma classificação mecânica. Este resumo organiza suas informações e não constitui diagnóstico do veículo.\n  - generic: \n  - text: Resumo da sessão preparado\n  - text: Próximo passo\n  - heading \"Por onde começamos?\" [level=2]\n  - button \" Diagnóstico inteligente Seu carro está estranho? Vamos entender juntos. \":\n    - generic: \n    - heading \"Diagnóstico inteligente\" [level=3]\n    - paragraph: Seu carro está estranho? Vamos entender juntos.\n    - generic: \n  - button \" Plano de manutenção Organize revisões e evite surpresas. \":\n    - generic: \n    - heading \"Plano de manutenção\" [level=3]\n    - paragraph: Organize revisões e evite surpresas.\n    - generic: \n  - button \" Aprender sobre meu carro Entenda mecânica sem linguagem complicada. \":\n    - generic: \n    - heading \"Aprender sobre meu carro\" [level=3]\n    - paragraph: Entenda mecânica sem linguagem complicada.\n    - generic: \n  - button \" Histórico Relembre tudo o que já aconteceu com seu veículo. \":\n    - generic: \n    - heading \"Histórico\" [level=3]\n    - paragraph: Relembre tudo o que já aconteceu com seu veículo.\n    - generic: \n  - generic: \n  - text: Dica do AutoPilot\n  - heading \"Quer conhecer melhor o seu carro?\" [level=2]\n  - paragraph: Posso ensinar como identificar sinais de desgaste antes que eles se transformem em problemas maiores.\n  - button \"Ver dica \":\n    - text: Ver dica\n    - generic: \n  - generic: \n  - paragraph: Quanto melhor eu conhecer seu carro, melhor poderei ajudar você a cuidar dele."
+  },
+  {
+    "id": "V05-cockpit-reload",
+    "dom": "- main:\n  - generic: \n  - text: AutoPilot AI\n  - heading \"Seu carro está tentando falar com você.\" [level=1]:\n    - text: Seu carro\n    - text: está tentando\n    - text: falar com você.\n  - paragraph: Descubra possíveis causas em poucos minutos, sem precisar entender de mecânica.\n  - button \" Iniciar Diagnóstico\":\n    - generic: \n    - text: Iniciar Diagnóstico\n  - generic: \n  - heading \"Sem cadastro\" [level=3]\n  - generic: \n  - heading \"Explicações simples\" [level=3]\n  - generic: \n  - heading \"IA que ensina\" [level=3]\n  - generic: \n  - paragraph: Auto\n  - paragraph: Vamos descobrir isso juntos."
+  },
+  {
+    "id": "V02-V06-mobile-cockpit",
+    "dom": "- main:\n  - generic: \n  - generic: AutoPilot AI\n  - paragraph: Seu copiloto automotivo\n  - heading \"Bom te ver por aqui.\" [level=1]\n  - paragraph:\n    - text: Hoje vamos cuidar do seu\n    - strong: Honda Civic · 2022 · 1.5 Turbo\n    - text: .\n  - paragraph: \"Quilometragem informada: 42000 km\"\n  - generic: Informações recebidas\n  - generic: \n  - heading \"Suas respostas estão organizadas.\" [level=2]\n  - paragraph:\n    - text: \"Objetivo:\"\n    - strong: Entender um problema atual\n  - paragraph:\n    - text: \"Urgência declarada:\"\n    - strong: Alta — preciso resolver logo\n  - paragraph: A urgência foi informada por você e não é uma classificação mecânica. Este resumo organiza suas informações e não constitui diagnóstico do veículo.\n  - generic: \n  - text: Resumo da sessão preparado\n  - text: Próximo passo\n  - heading \"Por onde começamos?\" [level=2]\n  - button \" Diagnóstico inteligente Seu carro está estranho? Vamos entender juntos. \":\n    - generic: \n    - heading \"Diagnóstico inteligente\" [level=3]\n    - paragraph: Seu carro está estranho? Vamos entender juntos.\n    - generic: \n  - button \" Plano de manutenção Organize revisões e evite surpresas. \":\n    - generic: \n    - heading \"Plano de manutenção\" [level=3]\n    - paragraph: Organize revisões e evite surpresas.\n    - generic: \n  - button \" Aprender sobre meu carro Entenda mecânica sem linguagem complicada. \":\n    - generic: \n    - heading \"Aprender sobre meu carro\" [level=3]\n    - paragraph: Entenda mecânica sem linguagem complicada.\n    - generic: \n  - button \" Histórico Relembre tudo o que já aconteceu com seu veículo. \":\n    - generic: \n    - heading \"Histórico\" [level=3]\n    - paragraph: Relembre tudo o que já aconteceu com seu veículo.\n    - generic: \n  - generic: \n  - text: Dica do AutoPilot\n  - heading \"Quer conhecer melhor o seu carro?\" [level=2]\n  - paragraph: Posso ensinar como identificar sinais de desgaste antes que eles se transformem em problemas maiores.\n  - button \"Ver dica \":\n    - text: Ver dica\n    - generic: \n  - generic: \n  - paragraph: Quanto melhor eu conhecer seu carro, melhor poderei ajudar você a cuidar dele."
+  },
+  {
+    "id": "V14-mobile-dimensions",
+    "metrics": {
+      "clientHeight": 844,
+      "clientWidth": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "width": 390
+    }
+  },
+  {
+    "id": "V14-mobile-landing",
+    "dom": "- main:\n  - generic: \n  - text: AutoPilot AI\n  - heading \"Seu carro está tentando falar com você.\" [level=1]:\n    - text: Seu carro\n    - text: está tentando\n    - text: falar com você.\n  - paragraph: Descubra possíveis causas em poucos minutos, sem precisar entender de mecânica.\n  - button \" Iniciar Diagnóstico\":\n    - generic: \n    - text: Iniciar Diagnóstico\n  - generic: \n  - heading \"Sem cadastro\" [level=3]\n  - generic: \n  - heading \"Explicações simples\" [level=3]\n  - generic: \n  - heading \"IA que ensina\" [level=3]\n  - generic: \n  - paragraph: Auto\n  - paragraph: Vamos descobrir isso juntos.",
+    "metrics": {
+      "height": 844,
+      "scrollWidth": 375,
+      "width": 390
+    }
+  },
+  {
+    "id": "V14-mobile-question1",
+    "dom": "- main:\n  - heading \"Qual carro vamos analisar?\" [level=2]\n  - paragraph: Se você já possui um veículo cadastrado, basta selecioná-lo.\n  - button \"Honda Civic · 2022 · 1.5 Turbo\"\n  - button \"Escolher outro\"\n  - generic: Pergunta 1 de 3\n  - generic: 33%\n  - button \"Voltar\" [disabled]\n  - button \"Continuar\" [disabled]",
+    "metrics": {
+      "height": 844,
+      "scrollWidth": 375,
+      "width": 390
+    }
+  },
+  {
+    "id": "V14-mobile-form",
+    "metrics": {
+      "height": 844,
+      "scrollWidth": 375,
+      "width": 390
+    }
+  },
+  {
+    "id": "V11-back-to-app",
+    "dom": "- main:\n  - generic: \n  - text: AutoPilot AI\n  - heading \"Seu carro está tentando falar com você.\" [level=1]:\n    - text: Seu carro\n    - text: está tentando\n    - text: falar com você.\n  - paragraph: Descubra possíveis causas em poucos minutos, sem precisar entender de mecânica.\n  - button \" Iniciar Diagnóstico\":\n    - generic: \n    - text: Iniciar Diagnóstico\n  - generic: \n  - heading \"Sem cadastro\" [level=3]\n  - generic: \n  - heading \"Explicações simples\" [level=3]\n  - generic: \n  - heading \"IA que ensina\" [level=3]\n  - generic: \n  - paragraph: Auto\n  - paragraph: Vamos descobrir isso juntos."
+  },
+  {
+    "id": "V14-desktop-hero-metrics",
+    "metrics": {
+      "height": 900,
+      "scrollWidth": 1440,
+      "width": 1440
+    }
+  },
+  {
+    "id": "V14-desktop-cockpit-metrics",
+    "dom": "- main:\n  - generic: \n  - generic: AutoPilot AI\n  - paragraph: Seu copiloto automotivo\n  - heading \"Bom te ver por aqui.\" [level=1]\n  - paragraph:\n    - text: Hoje vamos cuidar do seu\n    - strong: Honda Civic · 2022 · 1.5 Turbo\n    - text: .\n  - paragraph: \"Quilometragem informada: 42000 km\"\n  - generic: Informações recebidas\n  - generic: \n  - heading \"Suas respostas estão organizadas.\" [level=2]\n  - paragraph:\n    - text: \"Objetivo:\"\n    - strong: Entender um problema atual\n  - paragraph:\n    - text: \"Urgência declarada:\"\n    - strong: Alta — preciso resolver logo\n  - paragraph: A urgência foi informada por você e não é uma classificação mecânica. Este resumo organiza suas informações e não constitui diagnóstico do veículo.\n  - generic: \n  - text: Resumo da sessão preparado\n  - text: Próximo passo\n  - heading \"Por onde começamos?\" [level=2]\n  - button \" Diagnóstico inteligente Seu carro está estranho? Vamos entender juntos. \":\n    - generic: \n    - heading \"Diagnóstico inteligente\" [level=3]\n    - paragraph: Seu carro está estranho? Vamos entender juntos.\n    - generic: \n  - button \" Plano de manutenção Organize revisões e evite surpresas. \":\n    - generic: \n    - heading \"Plano de manutenção\" [level=3]\n    - paragraph: Organize revisões e evite surpresas.\n    - generic: \n  - button \" Aprender sobre meu carro Entenda mecânica sem linguagem complicada. \":\n    - generic: \n    - heading \"Aprender sobre meu carro\" [level=3]\n    - paragraph: Entenda mecânica sem linguagem complicada.\n    - generic: \n  - button \" Histórico Relembre tudo o que já aconteceu com seu veículo. \":\n    - generic: \n    - heading \"Histórico\" [level=3]\n    - paragraph: Relembre tudo o que já aconteceu com seu veículo.\n    - generic: \n  - generic: \n  - text: Dica do AutoPilot\n  - heading \"Quer conhecer melhor o seu carro?\" [level=2]\n  - paragraph: Posso ensinar como identificar sinais de desgaste antes que eles se transformem em problemas maiores.\n  - button \"Ver dica \":\n    - text: Ver dica\n    - generic: \n  - generic: \n  - paragraph: Quanto melhor eu conhecer seu carro, melhor poderei ajudar você a cuidar dele.",
+    "metrics": {
+      "height": 900,
+      "scrollWidth": 1425,
+      "width": 1440
+    }
+  },
+  {
+    "id": "V03-normal-positive-storage",
+    "dom": "- main:\n  - generic: \n  - text: AutoPilot AI\n  - heading \"Seu carro está tentando falar com você.\" [level=1]:\n    - text: Seu carro\n    - text: está tentando\n    - text: falar com você.\n  - paragraph: Descubra possíveis causas em poucos minutos, sem precisar entender de mecânica.\n  - button \" Iniciar Diagnóstico\":\n    - generic: \n    - text: Iniciar Diagnóstico\n  - generic: \n  - heading \"Sem cadastro\" [level=3]\n  - generic: \n  - heading \"Explicações simples\" [level=3]\n  - generic: \n  - heading \"IA que ensina\" [level=3]\n  - generic: \n  - paragraph: Auto\n  - paragraph: Vamos descobrir isso juntos.\n- complementary:\n  - heading \"Apoio temporário da missão 02.5\" [level=2]\n  - text: Storage sintético\n  - combobox \"Storage sintético\":\n    - option \"preserve\" [selected]\n    - option \"absent\"\n    - option \"corrupt\"\n    - option \"schema\"\n    - option \"invalid\"\n    - option \"toyota\"\n    - option \"honda\"\n    - option \"readfail\"\n    - option \"writefail\"\n    - option \"getterfail\"\n    - option \"restore\"\n  - text: Respostas sintéticas\n  - combobox \"Respostas sintéticas\":\n    - option \"preserve\" [selected]\n    - option \"empty\"\n    - option \"incomplete\"\n    - option \"invalid\"\n    - option \"valid\"\n  - text: Destino de teste\n  - combobox \"Destino de teste\":\n    - option \"stay\" [selected]\n    - option \"landing\"\n    - option \"questionnaire\"\n    - option \"hero\"\n    - option \"cockpit\"\n    - option \"vehicle-profile\"\n  - button \"Aplicar estado sintético\"\n  - button \"Inspecionar estado de teste\"\n  - generic: \"{ \\\"mode\\\": \\\"normal\\\", \\\"screen\\\": \\\"landing\\\", \\\"answerVehicleId\\\": null, \\\"answers\\\": {}, \\\"storage\\\": { \\\"id\\\": \\\"cf79f587-004e-4fd2-b6d6-d530d6a6cd0c\\\", \\\"manufacturer\\\": \\\"Honda\\\", \\\"model\\\": \\\"Civic\\\", \\\"year\\\": 2022, \\\"engine\\\": \\\"1.5 Turbo\\\", \\\"fuelType\\\": \\\"Gasolina\\\", \\\"mileage\\\": 42000, \\\"nickname\\\": null, \\\"createdAt\\\": \\\"2026-10-04T15:09:28.108Z\\\", \\\"updatedAt\\\": \\\"2026-10-04T15:09:28.108Z\\\", \\\"schemaVersion\\\": 1 }, \\\"userAgent\\\": \\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36\\\", \\\"viewport\\\": { \\\"width\\\": 1440, \\\"height\\\": 900 }, \\\"scrollWidth\\\": 1425 }\"",
+    "storageInspection": "{\n  \"mode\": \"normal\",\n  \"screen\": \"landing\",\n  \"answerVehicleId\": null,\n  \"answers\": {},\n  \"storage\": {\n    \"id\": \"cf79f587-004e-4fd2-b6d6-d530d6a6cd0c\",\n    \"manufacturer\": \"Honda\",\n    \"model\": \"Civic\",\n    \"year\": 2022,\n    \"engine\": \"1.5 Turbo\",\n    \"fuelType\": \"Gasolina\",\n    \"mileage\": 42000,\n    \"nickname\": null,\n    \"createdAt\": \"2026-10-04T15:09:28.108Z\",\n    \"updatedAt\": \"2026-10-04T15:09:28.108Z\",\n    \"schemaVersion\": 1\n  },\n  \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36\",\n  \"viewport\": {\n    \"width\": 1440,\n    \"height\": 900\n  },\n  \"scrollWidth\": 1425\n}"
+  },
+  {
+    "id": "V03-zero-storage-V09-recovery",
+    "dom": "- main:\n  - heading \"Qual carro vamos analisar?\" [level=2]\n  - paragraph: Se você já possui um veículo cadastrado, basta selecioná-lo.\n  - button \"Toyota Corolla · 2020 · 2.0\"\n  - button \"Escolher outro\"\n  - generic: Pergunta 1 de 3\n  - generic: 33%\n  - button \"Voltar\" [disabled]\n  - button \"Continuar\" [disabled]\n- complementary:\n  - heading \"Apoio temporário da missão 02.5\" [level=2]\n  - text: Storage sintético\n  - combobox \"Storage sintético\":\n    - option \"preserve\"\n    - option \"absent\"\n    - option \"corrupt\" [selected]\n    - option \"schema\"\n    - option \"invalid\"\n    - option \"toyota\"\n    - option \"honda\"\n    - option \"readfail\"\n    - option \"writefail\"\n    - option \"getterfail\"\n    - option \"restore\"\n  - text: Respostas sintéticas\n  - combobox \"Respostas sintéticas\":\n    - option \"preserve\"\n    - option \"empty\" [selected]\n    - option \"incomplete\"\n    - option \"invalid\"\n    - option \"valid\"\n  - text: Destino de teste\n  - combobox \"Destino de teste\":\n    - option \"stay\"\n    - option \"landing\"\n    - option \"questionnaire\" [selected]\n    - option \"hero\"\n    - option \"cockpit\"\n    - option \"vehicle-profile\"\n  - button \"Aplicar estado sintético\"\n  - button \"Inspecionar estado de teste\" [active]\n  - generic: \"{ \\\"mode\\\": \\\"normal\\\", \\\"screen\\\": \\\"questionnaire\\\", \\\"answerVehicleId\\\": \\\"4caf4903-e7b0-492d-92b3-7b036017f52b\\\", \\\"answers\\\": {}, \\\"storage\\\": { \\\"id\\\": \\\"4caf4903-e7b0-492d-92b3-7b036017f52b\\\", \\\"manufacturer\\\": \\\"Toyota\\\", \\\"model\\\": \\\"Corolla\\\", \\\"year\\\": 2020, \\\"engine\\\": \\\"2.0\\\", \\\"fuelType\\\": \\\"Flex\\\", \\\"mileage\\\": 0, \\\"nickname\\\": \\\"\\\\\\\"Meu\\\\\\\" & <img src=x onerror=\\\\\\\"alert(1)\\\\\\\"> São João '\\\", \\\"createdAt\\\": \\\"2026-10-04T15:16:55.247Z\\\", \\\"updatedAt\\\": \\\"2026-10-04T15:16:55.247Z\\\", \\\"schemaVersion\\\": 1 }, \\\"userAgent\\\": \\\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36\\\", \\\"viewport\\\": { \\\"width\\\": 1440, \\\"height\\\": 900 }, \\\"scrollWidth\\\": 1425 }\"",
+    "storageInspection": "{\n  \"mode\": \"normal\",\n  \"screen\": \"questionnaire\",\n  \"answerVehicleId\": \"4caf4903-e7b0-492d-92b3-7b036017f52b\",\n  \"answers\": {},\n  \"storage\": {\n    \"id\": \"4caf4903-e7b0-492d-92b3-7b036017f52b\",\n    \"manufacturer\": \"Toyota\",\n    \"model\": \"Corolla\",\n    \"year\": 2020,\n    \"engine\": \"2.0\",\n    \"fuelType\": \"Flex\",\n    \"mileage\": 0,\n    \"nickname\": \"\\\"Meu\\\" & <img src=x onerror=\\\"alert(1)\\\"> São João '\",\n    \"createdAt\": \"2026-10-04T15:16:55.247Z\",\n    \"updatedAt\": \"2026-10-04T15:16:55.247Z\",\n    \"schemaVersion\": 1\n  },\n  \"userAgent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36\",\n  \"viewport\": {\n    \"width\": 1440,\n    \"height\": 900\n  },\n  \"scrollWidth\": 1425\n}"
+  }
+]
