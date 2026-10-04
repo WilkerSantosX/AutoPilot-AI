@@ -1,12 +1,12 @@
 # Missão 02.5 — Validação integrada do MVP
 
-> Status: Draft
+> Status: Approved
 > Projeto: AutoPilot AI
 > Sprint: 02
 > Responsáveis: PO — Wilker; Tech Lead — ChatGPT; execução — Codex
 > Protocolo: docs/governance/mission-handoff-protocol.md
-> Aprovação conceitual: PO Wilker em 2026-10-04 (America/Sao_Paulo).
-> Draft não executável. A execução depende da promoção explícita para Approved.
+> Aprovação: recorte aprovado explicitamente pelo PO Wilker em 2026-10-04 (America/Sao_Paulo); publicação Draft → revisão → Approved autorizada na mesma conversa.
+> Revisão Tech Lead: Draft remoto 334695b2512f636fd75fdeff7027092b322d476d conferido antes desta promoção; contrato executável somente neste status.
 
 ## Objetivo
 
