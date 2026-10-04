@@ -1,12 +1,14 @@
 # Missão 02.6 — Sprint 2 Delivery Readiness & PR Preparation
 
-> Status: Approved
+> Status: Completed
 > Projeto: AutoPilot AI
 > Sprint: 02
 > Responsáveis: PO — Wilker; Tech Lead — ChatGPT; execução — Codex
 > Baseline obrigatória: `f3197cb5dae1e92aabcacee651dc3dfb315015f3`
 > Branch alvo de trabalho: `feature/sprint-02-vehicle-profile`
 > Base do PR: `main`
+> Gate final aceito: `SPRINT_02_PR_READY_WITH_RESERVATIONS`
+> Aceite PO/Tech Lead: 2026-10-04 — aprovado com ressalvas
 
 ## 1. Objetivo
 
@@ -236,3 +238,13 @@ Ao finalizar, o Codex deve publicar o relatório, commits autorizados e estado r
 O Tech Lead revisará diff, relatório, evidências, auditoria de promessa e readiness do PR. O PO decidirá sobre aceite da 02.6 e qualquer autorização posterior.
 
 **Não executar merge sem autorização explícita do PO Wilker.**
+
+## 11. Fechamento PO/Tech Lead
+
+Em 2026-10-04, após revisão do relatório, evidências e diff da execução, o PO aprovou formalmente a Missão 02.6 com ressalvas.
+
+Gate aceito: `SPRINT_02_PR_READY_WITH_RESERVATIONS`.
+
+Ressalva preservada: F01 (`favicon.ico` 404), Minor e não bloqueante. O resultado histórico V15 da Missão 02.5 permanece inalterado.
+
+A missão está concluída e autoriza a progressão para abertura e revisão do Pull Request da Sprint 2. Este fechamento **não autoriza merge em `main`**. Qualquer merge continua condicionado a autorização explícita posterior do PO Wilker.
