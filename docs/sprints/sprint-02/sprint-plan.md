@@ -2,7 +2,7 @@
 
 ## Status
 
-Planning
+Documentation Update — Sprint Review aprovada; aguardando integração documental
 
 ## Sprint Goal
 
@@ -168,3 +168,11 @@ A Sprint somente poderá ser considerada concluída quando:
 * os aprendizados tiverem sido registrados;
 * a Sprint Review tiver sido concluída;
 * a Foundation Recovery tiver sido reavaliada com base nas evidências da execução.
+
+## Registro de entrega e aceite — 2026-10-04
+
+Objetivo implementado e integrado pelo [PR #1](https://github.com/WilkerSantosX/AutoPilot-AI/pull/1), merge `6e81d898b17e1465dc7a159cd5c2310d8894fef5`, autorizado explicitamente pelo PO Wilker. A Sprint Review foi lida e aprovada pelo PO em 2026-10-04, com ressalvas, aprendizados e Foundation Recovery parcial registrados em [sprint-02-review.md](reports/sprint-02-review.md).
+
+19 testes passaram na revisão técnica. F01 (favicon 404) continua Minor, não bloqueante; V15 histórico permanece FAIL Minor. O único perfil é local; respostas são da sessão; capacidades futuras não estão implementadas. A quilometragem válida é inteira maior ou igual a zero conforme resolução explícita da 02.4.
+
+Este pacote sincroniza os documentos para QG-007 e preserva aprendizados para QG-008. A integração documental é o gate restante para avaliar a transição a Done. Não há autorização de merge deste PR implícita no aceite da Sprint Review. Foundation Recovery foi reavaliada e não declarada concluída. Escopo, critérios e Definition of Done originais acima permanecem preservados.
