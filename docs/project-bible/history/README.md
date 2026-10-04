@@ -43,3 +43,11 @@ Essa descoberta passou a orientar toda a evolução futura da metodologia.
 Durante a Sprint 1.5 surgiu a percepção de que o conjunto formado por Project Bible, Engineering Bible e APDL se comporta como um verdadeiro Product Operating System, capaz de organizar estratégia, engenharia e execução de forma integrada.
 
 Decidiu-se manter essa visão apenas como hipótese estratégica até a conclusão do MVP, evitando aumento de escopo antes da validação prática da metodologia.
+
+## Sprint 2 — entrega e Sprint Review (2026-10-04)
+
+A Sprint 2 entregou o primeiro perfil persistente local do veículo e o percurso cadastro → perguntas → Hero → cockpit factual. O PR #1 foi integrado em `6e81d89` após revisão técnica e autorização explícita do PO. A Sprint Review foi lida e aprovada pelo PO Wilker em 2026-10-04. O fechamento documental aguarda integração própria; a Sprint não é declarada Done neste registro.
+
+[Review, aprendizados, pendências e Foundation Recovery](../../sprints/sprint-02/reports/sprint-02-review.md).
+
+GOV.01 foi exercitado por contratos versionados, execução, evidências, review e aceite. A auditoria de promessas alinhou a interface à capacidade real; contexto local do veículo foi separado das respostas temporárias. F01 permaneceu rastreável, sem reescrever o FAIL Minor histórico. Foundation Recovery permanece parcial: faltam fontes estratégicas enumeradas no Project Bible. Esta execução não promove a hipótese de Workflow Engine ou Product Operating System a decisão de produto.
