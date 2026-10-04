@@ -4,22 +4,22 @@ export function renderCockpitScreen({ profile, answers }) {
         {
             icon: "bi-tools",
             title: "Diagnóstico inteligente",
-            description: "Seu carro está estranho? Vamos entender juntos."
+            description: "Capacidade futura, ainda indisponível."
         },
         {
             icon: "bi-calendar-check-fill",
             title: "Plano de manutenção",
-            description: "Organize revisões e evite surpresas."
+            description: "Planejamento de revisões ainda indisponível."
         },
         {
             icon: "bi-book-half",
             title: "Aprender sobre meu carro",
-            description: "Entenda mecânica sem linguagem complicada."
+            description: "Conteúdo educativo ainda indisponível."
         },
         {
             icon: "bi-clock-history",
             title: "Histórico",
-            description: "Relembre tudo o que já aconteceu com seu veículo."
+            description: "Registro de eventos do veículo ainda indisponível."
         }
     ];
 
@@ -37,7 +37,7 @@ export function renderCockpitScreen({ profile, answers }) {
                     </div>
 
                     <p class="cockpit-eyebrow">
-                        Seu copiloto automotivo
+                        Seu contexto automotivo
                     </p>
 
                     <h1 class="cockpit-title">
@@ -45,7 +45,7 @@ export function renderCockpitScreen({ profile, answers }) {
                     </h1>
 
                     <p class="cockpit-subtitle">
-                        Hoje vamos cuidar do seu
+                        Este é o resumo da sua jornada com o
                         <strong>${vehicleName}</strong>.
                     </p>
                     <p class="cockpit-subtitle">Quilometragem informada: ${escapeText(profile.mileage)} km</p>
@@ -88,11 +88,11 @@ export function renderCockpitScreen({ profile, answers }) {
                     <div class="cockpit-section-heading">
                         <div>
                             <span class="cockpit-section-label">
-                                Próximo passo
+                                Capacidades futuras
                             </span>
 
                             <h2>
-                                Por onde começamos?
+                                Ainda indisponíveis
                             </h2>
                         </div>
                     </div>
@@ -102,6 +102,7 @@ export function renderCockpitScreen({ profile, answers }) {
                             <button
                                 type="button"
                                 class="cockpit-action-card"
+                                disabled
                             >
                                 <div class="cockpit-action-icon">
                                     <i class="bi ${action.icon}"></i>
@@ -109,10 +110,10 @@ export function renderCockpitScreen({ profile, answers }) {
 
                                 <div class="cockpit-action-content">
                                     <h3>${action.title}</h3>
+                                    <span class="cockpit-section-label">Em breve</span>
                                     <p>${action.description}</p>
                                 </div>
 
-                                <i class="bi bi-arrow-right cockpit-action-arrow"></i>
                             </button>
                         `).join("")}
                     </div>
@@ -125,7 +126,7 @@ export function renderCockpitScreen({ profile, answers }) {
 
                     <div class="cockpit-insight-content">
                         <span class="cockpit-section-label">
-                            Dica do AutoPilot
+                            Conteúdo futuro
                         </span>
 
                         <h2>
@@ -133,16 +134,15 @@ export function renderCockpitScreen({ profile, answers }) {
                         </h2>
 
                         <p>
-                            Posso ensinar como identificar sinais de desgaste
-                            antes que eles se transformem em problemas maiores.
+                            Dicas educativas são uma capacidade futura e ainda não estão disponíveis.
                         </p>
 
                         <button
                             type="button"
                             class="cockpit-insight-button"
+                            disabled
                         >
-                            Ver dica
-                            <i class="bi bi-arrow-right"></i>
+                            Dicas — em breve
                         </button>
                     </div>
                 </section>
@@ -151,8 +151,8 @@ export function renderCockpitScreen({ profile, answers }) {
                     <i class="bi bi-stars"></i>
 
                     <p>
-                        Quanto melhor eu conhecer seu carro,
-                        melhor poderei ajudar você a cuidar dele.
+                        O perfil do veículo fica salvo neste dispositivo.
+                        As respostas são desta sessão e precisam ser refeitas ao recarregar.
                     </p>
                 </footer>
 

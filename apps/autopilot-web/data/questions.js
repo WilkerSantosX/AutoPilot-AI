@@ -1,7 +1,7 @@
 export const Questions = [
     {
         id: 1,
-        title: "Qual carro vamos analisar?",
+        title: "Qual veículo vamos usar nesta jornada?",
         subtitle: "Se você já possui um veículo cadastrado, basta selecioná-lo.",
         type: "vehicle",
         options: [
@@ -12,7 +12,7 @@ export const Questions = [
     {
         id: 2,
         title: "O que você quer fazer agora?",
-        subtitle: "Escolha o tipo de análise que mais combina com sua necessidade.",
+        subtitle: "Registre seu objetivo. Ele será exibido no resumo; esta etapa não realiza a ação escolhida.",
         type: "goal",
         options: [
             "Entender um problema atual",
@@ -24,7 +24,7 @@ export const Questions = [
     {
         id: 3,
         title: "Qual é o nível de urgência?",
-        subtitle: "Isso ajuda o AutoPilot AI a priorizar o diagnóstico.",
+        subtitle: "A urgência declarada será exibida no resumo, sem avaliação mecânica.",
         type: "urgency",
         options: [
             "Baixa — só quero me organizar",
