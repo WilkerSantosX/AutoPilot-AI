@@ -40,6 +40,16 @@ export function renderApp() {
     }
 
     switch (AppState.currentScreen) {
+        case "care-cockpit": {
+            const vehicle = loadVehicleProfile();
+            if (!vehicle.ok || !isVehicleProfile(vehicle.profile)) {
+                goToScreen("vehicle-profile");
+                return;
+            }
+            app.innerHTML = renderCockpitScreen({ profile: vehicle.profile, answers: null });
+            bindCockpitScreenEvents();
+            break;
+        }
         case "care-onboarding": {
             const vehicle = loadVehicleProfile();
             if (!vehicle.ok || !vehicle.profile) {

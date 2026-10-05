@@ -11,7 +11,7 @@ export function renderCareOnboardingScreen(profile) {
             <p>Conte o que você sabe, sem precisar lembrar de tudo. Acompanhamos suas referências; não avaliamos a condição mecânica.</p>
         </header>
         <div id="care-step"></div>
-        <div class="vehicle-profile-actions"><a class="btn btn-outline-secondary" href="./">Voltar à aplicação</a></div>
+        <div class="vehicle-profile-actions"><a class="btn btn-outline-secondary" href="./?screen=care-cockpit">Ver cuidados do veículo</a></div>
     </div></section>`;
 }
 

@@ -29,8 +29,9 @@ function setup(t) {
     const options = [element(), element()];
     options[0].dataset.answer = "Usar este veículo";
     options[1].dataset.answer = "Escolher outro";
-    let serialized = null;
-    const storage = { getItem() { return serialized; }, setItem(key, value) { serialized = value; } };
+    const storedValues = new Map();
+    const storage = { getItem(key) { return storedValues.get(key) ?? null; },
+        setItem(key, value) { storedValues.set(key === "profile" ? "autopilot.vehicle-profile.v1" : key, value); } };
     globalThis.document = { getElementById: id => nodes.get(id), querySelectorAll: () => options,
         querySelector: () => null };
     Object.defineProperty(globalThis, "localStorage", { configurable: true, value: storage });
@@ -255,4 +256,22 @@ test("callback de cadastro não é chamado em reenvio duplicado", t => {
     submit({ preventDefault() {} });
     submit({ preventDefault() {} });
     assert.equal(calls, 1);
+});
+
+
+test("entrada direta de cuidados usa veículo ativo sem respostas e preserva guarda legada", t => {
+    const { nodes, storage } = setup(t);
+    goToScreen("care-cockpit");
+    assert.equal(AppState.currentScreen, "vehicle-profile");
+    saveVehicleProfile(createVehicleProfile(input).profile);
+    goToScreen("care-cockpit");
+    assert.equal(AppState.currentScreen, "care-cockpit");
+    assert.match(nodes.get("app").innerHTML, /Existe algo a fazer agora/);
+    assert.match(nodes.get("app").innerHTML, /Informação a completar/);
+    assert.match(nodes.get("app").innerHTML, /screen=care-onboarding/);
+    goToScreen("cockpit");
+    assert.equal(AppState.currentScreen, "questionnaire");
+    storage.setItem("profile", "{bad");
+    goToScreen("care-cockpit");
+    assert.equal(AppState.currentScreen, "vehicle-profile");
 });
