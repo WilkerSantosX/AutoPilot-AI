@@ -1,3 +1,5 @@
+import { isCareItemId } from "./vehicle/careModel.js";
+import { renderCareLoopScreen, bindCareLoopScreenEvents } from "./screens/CareLoopScreen.js";
 import { renderLanding } from "./screens/landingScreen.js";
 import { loadVehicleProfile } from "./vehicle/vehicleStorage.js";
 import { isVehicleProfile } from "./vehicle/vehicleModel.js";
@@ -40,6 +42,26 @@ export function renderApp() {
     }
 
     switch (AppState.currentScreen) {
+        case "care-loop": {
+            const vehicle = loadVehicleProfile();
+            if (!vehicle.ok || !isVehicleProfile(vehicle.profile)) { goToScreen("vehicle-profile"); return; }
+            const careItemId = new URLSearchParams(window.location.search).get("item");
+            if (!isCareItemId(careItemId)) { goToScreen("care-cockpit"); return; }
+            app.innerHTML = renderCareLoopScreen(vehicle.profile, careItemId);
+            bindCareLoopScreenEvents(vehicle.profile, careItemId, { onSaved: isLatest => {
+                goToScreen("care-cockpit");
+                const feedback = document.createElement("p");
+                feedback.setAttribute("role", "status");
+                feedback.setAttribute("tabindex", "-1");
+                feedback.textContent = isLatest
+                    ? "Cuidado registrado. Novo marco estabelecido e acompanhamento recalculado."
+                    : "Cuidado retrospectivo registrado. Acompanhamento recalculado; o marco mais recente foi preservado.";
+                document.querySelector(".care-cockpit")?.prepend(feedback);
+                feedback.focus();
+                window.history.replaceState(null, "", "./?screen=care-cockpit");
+            } });
+            break;
+        }
         case "care-cockpit": {
             const vehicle = loadVehicleProfile();
             if (!vehicle.ok || !isVehicleProfile(vehicle.profile)) {

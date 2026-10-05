@@ -42,17 +42,18 @@ function renderItem(item) {
             ${reference ? `<dt>Referência informada por você</dt><dd>${km(reference.nextDueMileage)} — origem: usuário</dd>` : ""}
         </dl>${distance ? `<p class="care-distance">${distance}</p>` : ""}
         ${canComplete ? `<a class="care-link" href="./?screen=care-onboarding">Completar ${LABELS[item.careItemId].toLowerCase()} no percurso de cuidados</a>` : ""}
+        <a class="care-link" href="./?screen=care-loop&item=${item.careItemId}">Registrar cuidado realizado: ${LABELS[item.careItemId]}</a>
     </article>`;
 }
 
 export function describeNextAction(action) {
     if (action.type === "monitor") return "Continue acompanhando a referência informada.";
     if (action.type === "prepare-for-reference") return "Prepare-se para a referência informada que se aproxima.";
-    if (action.type === "act-on-reference") return "Aja em relação à referência informada. Após realizar o cuidado, será necessário registrar um novo marco; esse fluxo ainda não está disponível no cockpit.";
+    if (action.type === "act-on-reference") return "Aja em relação à referência informada. Após realizar o cuidado, registre-o para estabelecer um novo marco.";
     if (action.type === "update-mileage") return "Informe uma leitura do odômetro no onboarding, usando o marco já salvo.";
-    if (action.information === "milestone-mileage") return "Precisamos da quilometragem do marco. O marco salvo não pode ser editado neste fluxo; complemente o histórico somente quando souber. Um novo marco após manutenção dependerá do fluxo futuro.";
+    if (action.information === "milestone-mileage") return "Precisamos da quilometragem do marco. O marco salvo não pode ser editado neste fluxo; complemente o histórico somente quando souber. Quando realizar o cuidado, registre um novo marco.";
     if (action.information === "care-reference") return "Informe a próxima referência que você já conhece, usando o marco salvo no onboarding. Se não souber, mantenha a lacuna.";
-    return "Informe o histórico quando souber. Se não lembrar, pode continuar sem inventar fatos; um novo marco após realizar o cuidado dependerá do fluxo futuro.";
+    return "Informe o histórico quando souber. Se não lembrar, pode continuar sem inventar fatos; quando realizar o cuidado, registre um novo marco.";
 }
 
 function km(value) { return `${value.toLocaleString("pt-BR")} km`; }

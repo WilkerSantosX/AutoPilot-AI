@@ -113,7 +113,7 @@ test("quilometragem de marco ausente não fabrica CTA de edição impossível", 
     assert.doesNotMatch(html, /Completar óleo do motor no percurso/);
     assert.match(describeNextAction({ type: "update-mileage" }), /leitura do odômetro/);
     assert.match(describeNextAction({ type: "provide-information", information: "care-reference" }), /próxima referência/);
-    assert.match(describeNextAction({ type: "act-on-reference" }), /fluxo ainda não está disponível/);
+    assert.match(describeNextAction({ type: "act-on-reference" }), /registre-o para estabelecer um novo marco/);
 });
 
 test("erros são escapados antes de apresentar HTML", () => {
