@@ -2,6 +2,7 @@ import { renderLanding } from "./screens/landingScreen.js";
 import { loadVehicleProfile } from "./vehicle/vehicleStorage.js";
 import { isVehicleProfile } from "./vehicle/vehicleModel.js";
 import { Questions } from "./data/questions.js";
+import { renderCareOnboardingScreen, bindCareOnboardingScreenEvents } from "./screens/CareOnboardingScreen.js";
 
 import {
     renderQuestionScreen,
@@ -39,6 +40,16 @@ export function renderApp() {
     }
 
     switch (AppState.currentScreen) {
+        case "care-onboarding": {
+            const vehicle = loadVehicleProfile();
+            if (!vehicle.ok || !vehicle.profile) {
+                goToScreen("vehicle-profile");
+                return;
+            }
+            app.innerHTML = renderCareOnboardingScreen(vehicle.profile);
+            bindCareOnboardingScreenEvents(vehicle.profile);
+            break;
+        }
         case "landing":
             renderLanding({
                 onStartDiagnosis: () => {
