@@ -22,7 +22,7 @@ export function renderCockpitScreen({ profile, answers }) {
         {
             icon: "bi-clock-history",
             title: "Histórico",
-            description: "Registro de eventos do veículo ainda indisponível."
+            description: "Consulta completa do histórico ainda indisponível."
         }
     ];
 

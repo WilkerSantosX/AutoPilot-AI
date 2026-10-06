@@ -72,6 +72,17 @@ test("evento anterior ao marco relevante fica histórico e referência mais rece
     assert.deepEqual(result.evaluation.evidence.reference, old.reference);
 });
 
+test("referência retrospectiva N<=M é rejeitada na preparação, sem plano de retry inválido", () => {
+    const store = storage(); initial(store);
+    const before = [...store.values];
+    for (const nextDueMileage of [70000, 69999]) {
+        const result = prepare(store, { ...base, occurredAt: "2026-08-01", mileage: 70000, nextDueMileage });
+        assert.equal(result.ok, false);
+        assert.equal(result.plan, undefined);
+    }
+    assert.deepEqual([...store.values], before);
+});
+
 test("reutiliza checkpoint equivalente sem duplicação e preserva perfil/veículos", () => {
     const store = storage(); checkpoint(store, 80000, base.occurredAt);
     store.setItem("autopilot.vehicle-profile.v1", "bytes do perfil");

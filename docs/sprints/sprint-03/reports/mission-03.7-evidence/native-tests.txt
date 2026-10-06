@@ -1,0 +1,119 @@
+✔ consolida três itens sem fatos com ação útil e ordem estável (5.4683ms)
+✔ prioridade atenção > aproximação > insuficiência preserva avaliações do engine (9.5107ms)
+✔ insuficiência precede acompanhamento dentro da referência; empates seguem CARE_ITEMS (2.0197ms)
+✔ distância factual positiva, zero e excedida; sem previsão temporal (29.5982ms)
+✔ referência continua user e evidência identifica origem e datas factuais (1.2478ms)
+✔ reload recupera onboarding e isola veículos sem tocar schemas ou perfil (1.3219ms)
+✔ falha/corrupção de cada storage não vira informação insuficiente nem escreve (1.3198ms)
+✔ quilometragem de marco ausente não fabrica CTA de edição impossível (0.9441ms)
+✔ erros são escapados antes de apresentar HTML (0.5792ms)
+✔ identifica somente as três famílias iniciais (3.4675ms)
+✔ cria fato com datas distintas e mantém quilometragem desconhecida (5.8344ms)
+✔ rejeita estruturas inválidas sem fabricar fatos (0.74ms)
+✔ ausência de histórico retorna lista vazia segura (0.7865ms)
+✔ salva e recupera eventos em ordem de registro isolados por veículo (1.0723ms)
+✔ histórico inválido ou de outra versão não é sobrescrito (2.4558ms)
+✔ falhas de acesso e quota retornam erro sem lançar exceção (0.5474ms)
+✔ acesso bloqueado ao localStorage global retorna erro recuperável (0.3532ms)
+✔ persistência de cuidados preserva contrato e bytes do VehicleProfile (2.5659ms)
+✔ novo marco/reference corretos preservam fatos antigos e recalculam pelo engine (12.1781ms)
+✔ sem nova referência não herda referência nem intervalo e permanece honesto (1.1297ms)
+✔ checkpoint factual usa data do cuidado, zero válido e mileage opcional (0.7888ms)
+✔ retrospectivo torna-se marco quando aplicável sem reduzir última leitura (1.1064ms)
+✔ evento anterior ao marco relevante fica histórico e referência mais recente permanece aplicável (2.0449ms)
+✔ referência retrospectiva N<=M é rejeitada na preparação, sem plano de retry inválido (0.9596ms)
+✔ reutiliza checkpoint equivalente sem duplicação e preserva perfil/veículos (0.7285ms)
+✔ validação rejeita futuro, números inválidos, redução e N<=M antes de escrever (1.5564ms)
+✔ falhas parciais em checkpoint/referência permitem retry idempotente sem falso sucesso (1.8279ms)
+✔ corrupção falha sem sobrescrita e reload preserva novo estado/schema (2.2667ms)
+✔ formulário preserva Care Item contextual, escapa perfil e impede reenvio concluído (12.4315ms)
+✔ referência user persiste, recupera e não duplica nem altera referência do mesmo marco (9.4109ms)
+✔ isola referência por veículo, item e marco sem promover referência antiga a novo ciclo (3.082ms)
+✔ rejeita referência inválida, vínculo errado e N<=M preservando bytes (1.3302ms)
+✔ corrupção, versões, duplicidade e vínculos inválidos não são sobrescritos (1.4444ms)
+✔ acesso bloqueado e quota retornam erro explícito (0.6581ms)
+✔ não sei nos três itens permite continuar sem escrever fatos ou preferências fictícias (1.3529ms)
+✔ histórico conhecido e referência opcional não fabricam leitura atual (4.0184ms)
+✔ referência sem leitura atual permanece insuficiente, com histórico suficiente ela alimenta engine (3.7252ms)
+✔ dados suficientes sobrevivem a recarregamento preservando perfil e schemas (3.7867ms)
+✔ plano inválido é recusado antes de escrever; zero é leitura factual válida (1.694ms)
+✔ retry após quota parcial preserva dados e não duplica evento/checkpoint (1.3482ms)
+✔ não sei preserva fatos existentes e não troca o veículo do plano (0.5312ms)
+✔ conflito com checkpoint ou referência salvo é recusado antes de qualquer escrita nova (0.7868ms)
+✔ entrada contextual e tela escapam perfil sem promessa mecânica (0.9065ms)
+✔ representa exatamente os quatro estados aprovados sem aceitar valores estranhos (2.4059ms)
+✔ histórico ausente permanece desconhecido e permite estabelecer marco após cuidado realizado (0.9737ms)
+✔ evento realizado sem referência continua insuficiente nas três famílias (1.6204ms)
+✔ avaliação isola veículo e Care Item mesmo quando outro histórico é mais recente (0.8825ms)
+✔ seleção de evento usa ocorrência antes de registro e não altera os fatos (0.6354ms)
+✔ empates de evento usam registro e ID independentemente de todas as permutações (0.7222ms)
+✔ usa seleção factual da 03.2, inclusive leituras retrospectivas, empates e zero (1.2909ms)
+✔ não converte mileage do evento ou perfil em checkpoint nem estima leitura ausente (0.2638ms)
+✔ dados inválidos e duplicados falham explicitamente sem avaliação artificial (0.8626ms)
+✔ avalia fatos persistidos preservando contratos, bytes e objetos de entrada (4.0604ms)
+✔ referência user é explícita e rejeita outras origens, vínculos e valores inválidos (1.0252ms)
+✔ referência igual ou inferior ao marco falha sem estado artificial (0.2834ms)
+✔ exemplo normativo 80000→90000 cobre as fronteiras e as próximas ações nos três itens (1.0303ms)
+✔ limites inteiros equivalem a ceil do limiar racional, inclusive intervalos curtos e máximos (1.7922ms)
+✔ lacunas indicam marco, referência ou leitura sem estimativa (0.5745ms)
+✔ novo marco não herda referência nem periodicidade do marco anterior (0.5755ms)
+✔ resultado é explicável sem diagnóstico e não modifica a referência de entrada (0.2657ms)
+✔ cria leitura factual com identidade, duas datas e zero válido (10.5857ms)
+✔ rejeita quilometragem negativa, fracionária, não numérica e insegura (1.8153ms)
+✔ rejeita identidades, datas, versão e estruturas inválidas (0.811ms)
+✔ histórico ausente é vazio seguro e seleção não inventa leitura (0.9859ms)
+✔ persiste múltiplas leituras e mantém isolamento por veículo (1.1434ms)
+✔ duplicidade e entradas inválidas preservam os bytes do histórico (0.556ms)
+✔ corrupção, versão desconhecida, associação errada e duplicidade não são sobrescritas (0.8852ms)
+✔ falhas de leitura e quota são erros recuperáveis sem alterar dados (0.4352ms)
+✔ getter bloqueado do localStorage global não lança exceção (0.7102ms)
+✔ leitura retrospectiva registrada depois não substitui a mais recente (0.9648ms)
+✔ empates temporais usam registro e depois ID com resultado independente da inserção (0.4399ms)
+✔ prepara e persiste atualização compatível sem destruir perfil, checkpoints ou Care Events (2.6795ms)
+✔ preparação preserva ausência, zero e histórico retrospectivo sem reduzir mileage (0.7831ms)
+Fluxo finalizado: {
+  '1': {
+    questionId: 1,
+    value: 'Usar este veículo',
+    answeredAt: '2026-10-06T00:27:16.292Z'
+  },
+  '2': {
+    questionId: 2,
+    value: 'Entender um problema atual',
+    answeredAt: '2026-10-06T00:27:16.292Z'
+  },
+  '3': {
+    questionId: 3,
+    value: 'Baixa — só quero me organizar',
+    answeredAt: '2026-10-06T00:27:16.292Z'
+  }
+}
+✔ entrada bloqueia perfil ausente, corrompido e inválido (26.2343ms)
+✔ Engine entrega respostas reais pela conclusão do questionário ao cockpit (4.6238ms)
+✔ Hero e cockpit recuperam entradas sem perfil ou respostas válidas (2.3352ms)
+✔ cockpit recebe veículo real, zero e diferentes respostas da sessão (1.9689ms)
+✔ troca de perfil durante perguntas ou Hero invalida respostas e reinicia (1.6792ms)
+✔ reset da jornada mantém apenas veículo persistido (0.6754ms)
+✔ cockpit escapa textos do perfil e respostas sem interpolar atributos (0.6188ms)
+✔ cadastro persiste zero, continua e reutiliza o mesmo perfil na reentrada (0.7432ms)
+✔ falha de escrita mantém formulário, dados e nova tentativa sem continuar (1.5467ms)
+✔ getter bloqueado de localStorage retorna erros recuperáveis (0.7405ms)
+✔ Escolher outro abre cadastro e substituição reinicia respostas (0.6411ms)
+✔ dados do perfil são escapados e não entram em atributos HTML (0.3572ms)
+✔ callback de cadastro não é chamado em reenvio duplicado (0.2332ms)
+✔ entrada direta de cuidados usa veículo ativo sem respostas e preserva guarda legada (0.41ms)
+✔ rota de Care Loop recusa Care Item ausente ou inválido sem registrar fatos (0.726ms)
+✔ normaliza textos, números e apelido vazio (1.3739ms)
+✔ valida campos obrigatórios e limites numéricos (0.3603ms)
+✔ cria o modelo obrigatório com schemaVersion 1 (0.3934ms)
+✔ persiste e recupera um único perfil (1.9544ms)
+✔ recuperação não quebra com ausência, JSON inválido ou falha de leitura (0.2888ms)
+✔ trata falha de escrita sem lançar erro (0.29ms)
+ℹ tests 94
+ℹ suites 0
+ℹ pass 94
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 350.0011

@@ -132,6 +132,8 @@ test("cockpit recebe veículo real, zero e diferentes respostas da sessão", t =
         assert.ok(html.includes(Questions[1].options[goal]));
         assert.ok(html.includes(Questions[2].options[urgency]));
         assert.ok(html.includes("não constitui diagnóstico"));
+        assert.match(html, /Consulta completa do histórico ainda indisponível/);
+        assert.doesNotMatch(html, /Registro de eventos do veículo ainda indisponível/);
         assert.doesNotMatch(html, /Wilker|Renault Clio|Veículo estável|situação crítica|tranquilidade/);
     }
 });
@@ -274,4 +276,21 @@ test("entrada direta de cuidados usa veículo ativo sem respostas e preserva gua
     storage.setItem("profile", "{bad");
     goToScreen("care-cockpit");
     assert.equal(AppState.currentScreen, "vehicle-profile");
+});
+
+
+test("rota de Care Loop recusa Care Item ausente ou inválido sem registrar fatos", t => {
+    const { nodes, storage } = setup(t);
+    saveVehicleProfile(createVehicleProfile(input).profile);
+    const originalWindow = Object.getOwnPropertyDescriptor(globalThis, "window");
+    t.after(() => { if (originalWindow) Object.defineProperty(globalThis, "window", originalWindow); else delete globalThis.window; });
+    for (const search of ["?screen=care-loop", "?screen=care-loop&item=invalid"]) {
+        Object.defineProperty(globalThis, "window", { configurable: true, value: { location: { search } } });
+        goToScreen("care-loop");
+        assert.equal(AppState.currentScreen, "care-cockpit");
+        assert.match(nodes.get("app").innerHTML, /Informação a completar/);
+        for (const prefix of ["autopilot.vehicle-care.v1:", "autopilot.odometer-checkpoints.v1:", "autopilot.care-references.v1:"]) {
+            assert.equal(storage.getItem(prefix + loadVehicleProfile().profile.id), null);
+        }
+    }
 });

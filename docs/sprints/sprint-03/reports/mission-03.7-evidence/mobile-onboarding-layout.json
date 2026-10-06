@@ -1,0 +1,59 @@
+{
+  "elements": [
+    {
+      "height": 48,
+      "id": "care-occurredAt",
+      "text": "",
+      "width": 316,
+      "x": 37,
+      "y": 556.109375
+    },
+    {
+      "height": 48,
+      "id": "care-mileage",
+      "text": "",
+      "width": 316,
+      "x": 37,
+      "y": 652.71875
+    },
+    {
+      "height": 48,
+      "id": "care-nextDueMileage",
+      "text": "",
+      "width": 316,
+      "x": 37,
+      "y": 770.9375
+    },
+    {
+      "height": 38,
+      "id": "care-submit",
+      "text": "Salvar e avaliar",
+      "width": 316,
+      "x": 37,
+      "y": 994.875
+    },
+    {
+      "height": 38,
+      "id": "care-cancel",
+      "text": "Voltar às opções",
+      "width": 316,
+      "x": 37,
+      "y": 1044.875
+    },
+    {
+      "height": 38,
+      "id": "",
+      "text": "Ver cuidados do veículo",
+      "width": 316,
+      "x": 37,
+      "y": 1106.875
+    }
+  ],
+  "gridColumns": "316px",
+  "viewport": {
+    "height": 844,
+    "scrollHeight": 1188,
+    "scrollWidth": 390,
+    "width": 390
+  }
+}

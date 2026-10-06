@@ -42,6 +42,9 @@ export function prepareCareOnboarding(input, context, { now = new Date().toISOSt
     const reference = input.nextDueMileage == null ? null : { vehicleId: input.vehicleId,
         careItemId: input.careItemId, careEventId: event.id, nextDueMileage: input.nextDueMileage, source: "user" };
     if (reference && event.mileage === null) return failed("A referência precisa da quilometragem conhecida do marco.");
+    if (reference && reference.nextDueMileage <= event.mileage) {
+        return failed("A próxima referência deve ser maior que a quilometragem do marco.");
+    }
     let checkpoint = null;
     if (input.currentMileage != null) {
         const created = createOdometerCheckpoint({ vehicleId: input.vehicleId, mileage: input.currentMileage,

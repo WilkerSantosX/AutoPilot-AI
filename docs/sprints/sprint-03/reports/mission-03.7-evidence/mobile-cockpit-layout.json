@@ -1,0 +1,67 @@
+{
+  "elements": [
+    {
+      "height": 64,
+      "text": "Completar informações dos cuidados",
+      "width": 308,
+      "x": 41,
+      "y": 642.75
+    },
+    {
+      "height": 566.4375,
+      "text": "Referência atingidaArrefecimento\n        Próximo passo: Aja em relação à referência informada. Após realizar o cuidado, registre-o para estabelecer um novo marco.\n        \n        \n            Marco registrado2026-09-01 · 80.000 km\n            Última leitura informada89.000 km · 2026-10-06\n            Referência informada por você89.000 km — origem: usuário\n        A última leitura está na referência.\n        \n        Registrar cuidado realizado: Arrefecimento",
+      "width": 308,
+      "x": 41,
+      "y": 730.75
+    },
+    {
+      "height": 64,
+      "text": "Registrar cuidado realizado: Arrefecimento",
+      "width": 266,
+      "x": 62,
+      "y": 1212.1875
+    },
+    {
+      "height": 515.25,
+      "text": "Referência se aproximandoÓleo do motor\n        Próximo passo: Prepare-se para a referência informada que se aproxima.\n        \n        \n            Marco registrado2026-09-01 · 80.000 km\n            Última leitura informada89.000 km · 2026-10-06\n            Referência informada por você90.000 km — origem: usuário\n        1.000 km até a referência, pela última leitura informada.\n        \n        Registrar cuidado realizado: Óleo do motor",
+      "width": 308,
+      "x": 41,
+      "y": 1313.1875
+    },
+    {
+      "height": 64,
+      "text": "Registrar cuidado realizado: Óleo do motor",
+      "width": 266,
+      "x": 62,
+      "y": 1743.4375
+    },
+    {
+      "height": 515.25,
+      "text": "Dentro da referênciaRevisão básica\n        Próximo passo: Continue acompanhando a referência informada.\n        \n        \n            Marco registrado2026-08-01 · 75.000 km\n            Última leitura informada89.000 km · 2026-10-06\n            Referência informada por você100.000 km — origem: usuário\n        11.000 km até a referência, pela última leitura informada.\n        \n        Registrar cuidado realizado: Revisão básica",
+      "width": 308,
+      "x": 41,
+      "y": 1844.4375
+    },
+    {
+      "height": 64,
+      "text": "Registrar cuidado realizado: Revisão básica",
+      "width": 266,
+      "x": 62,
+      "y": 2274.6875
+    },
+    {
+      "height": 40,
+      "text": "Acessar a jornada de perguntas",
+      "width": 261.71875,
+      "x": 20,
+      "y": 2408.6875
+    }
+  ],
+  "gridColumns": "308px",
+  "viewport": {
+    "height": 844,
+    "scrollHeight": 3790,
+    "scrollWidth": 390,
+    "width": 390
+  }
+}
