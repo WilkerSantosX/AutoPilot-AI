@@ -1,0 +1,9 @@
+.care-onboarding-screen h2 { margin: 24px 0 16px; color: var(--ap-dark); font-size: 1.5rem; }
+.care-onboarding-screen p { color: var(--ap-muted); line-height: 1.7; overflow-wrap: anywhere; }
+.care-choices { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0; }
+.care-progress { margin-top: 24px; font-weight: 600; }
+.care-feedback { padding: 16px; border-radius: 14px; background: #edf5fc; margin-bottom: 24px; }
+#care-message { color: var(--ap-danger); }
+.care-onboarding-screen [hidden] { display: none; }
+.care-onboarding-screen input[readonly] { background: #f3f5f7; }
+@media (max-width: 640px) { .care-choices { flex-direction: column; } .care-choices .btn { width: 100%; } }

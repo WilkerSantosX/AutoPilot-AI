@@ -29,8 +29,9 @@ function setup(t) {
     const options = [element(), element()];
     options[0].dataset.answer = "Usar este veículo";
     options[1].dataset.answer = "Escolher outro";
-    let serialized = null;
-    const storage = { getItem() { return serialized; }, setItem(key, value) { serialized = value; } };
+    const storedValues = new Map();
+    const storage = { getItem(key) { return storedValues.get(key) ?? null; },
+        setItem(key, value) { storedValues.set(key === "profile" ? "autopilot.vehicle-profile.v1" : key, value); } };
     globalThis.document = { getElementById: id => nodes.get(id), querySelectorAll: () => options,
         querySelector: () => null };
     Object.defineProperty(globalThis, "localStorage", { configurable: true, value: storage });
@@ -131,6 +132,8 @@ test("cockpit recebe veículo real, zero e diferentes respostas da sessão", t =
         assert.ok(html.includes(Questions[1].options[goal]));
         assert.ok(html.includes(Questions[2].options[urgency]));
         assert.ok(html.includes("não constitui diagnóstico"));
+        assert.match(html, /Consulta completa do histórico ainda indisponível/);
+        assert.doesNotMatch(html, /Registro de eventos do veículo ainda indisponível/);
         assert.doesNotMatch(html, /Wilker|Renault Clio|Veículo estável|situação crítica|tranquilidade/);
     }
 });
@@ -255,4 +258,39 @@ test("callback de cadastro não é chamado em reenvio duplicado", t => {
     submit({ preventDefault() {} });
     submit({ preventDefault() {} });
     assert.equal(calls, 1);
+});
+
+
+test("entrada direta de cuidados usa veículo ativo sem respostas e preserva guarda legada", t => {
+    const { nodes, storage } = setup(t);
+    goToScreen("care-cockpit");
+    assert.equal(AppState.currentScreen, "vehicle-profile");
+    saveVehicleProfile(createVehicleProfile(input).profile);
+    goToScreen("care-cockpit");
+    assert.equal(AppState.currentScreen, "care-cockpit");
+    assert.match(nodes.get("app").innerHTML, /Existe algo a fazer agora/);
+    assert.match(nodes.get("app").innerHTML, /Informação a completar/);
+    assert.match(nodes.get("app").innerHTML, /screen=care-onboarding/);
+    goToScreen("cockpit");
+    assert.equal(AppState.currentScreen, "questionnaire");
+    storage.setItem("profile", "{bad");
+    goToScreen("care-cockpit");
+    assert.equal(AppState.currentScreen, "vehicle-profile");
+});
+
+
+test("rota de Care Loop recusa Care Item ausente ou inválido sem registrar fatos", t => {
+    const { nodes, storage } = setup(t);
+    saveVehicleProfile(createVehicleProfile(input).profile);
+    const originalWindow = Object.getOwnPropertyDescriptor(globalThis, "window");
+    t.after(() => { if (originalWindow) Object.defineProperty(globalThis, "window", originalWindow); else delete globalThis.window; });
+    for (const search of ["?screen=care-loop", "?screen=care-loop&item=invalid"]) {
+        Object.defineProperty(globalThis, "window", { configurable: true, value: { location: { search } } });
+        goToScreen("care-loop");
+        assert.equal(AppState.currentScreen, "care-cockpit");
+        assert.match(nodes.get("app").innerHTML, /Informação a completar/);
+        for (const prefix of ["autopilot.vehicle-care.v1:", "autopilot.odometer-checkpoints.v1:", "autopilot.care-references.v1:"]) {
+            assert.equal(storage.getItem(prefix + loadVehicleProfile().profile.id), null);
+        }
+    }
 });

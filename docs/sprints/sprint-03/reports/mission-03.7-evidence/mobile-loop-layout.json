@@ -1,0 +1,66 @@
+{
+  "activeElement": "loop-message",
+  "elements": [
+    {
+      "height": 48,
+      "id": "loop-date",
+      "readOnly": false,
+      "text": "",
+      "width": 316,
+      "x": 37,
+      "y": 310.375
+    },
+    {
+      "height": 48,
+      "id": "loop-mileage",
+      "readOnly": false,
+      "text": "",
+      "width": 316,
+      "x": 37,
+      "y": 406.984375
+    },
+    {
+      "height": 48,
+      "id": "loop-reference",
+      "readOnly": false,
+      "text": "",
+      "width": 316,
+      "x": 37,
+      "y": 525.203125
+    },
+    {
+      "height": 48,
+      "id": "loop-message",
+      "readOnly": false,
+      "text": "A próxima referência deve ser maior que a quilometragem do marco.",
+      "width": 316,
+      "x": 37,
+      "y": 685.203125
+    },
+    {
+      "height": 38,
+      "id": "loop-submit",
+      "readOnly": false,
+      "text": "Registrar cuidado realizado",
+      "width": 246.1875,
+      "x": 37,
+      "y": 749.203125
+    },
+    {
+      "height": 38,
+      "id": "",
+      "readOnly": false,
+      "text": "Voltar aos cuidados",
+      "width": 186.484375,
+      "x": 37,
+      "y": 787.203125
+    }
+  ],
+  "gridColumns": "316px",
+  "viewport": {
+    "height": 844,
+    "scrollHeight": 869,
+    "scrollWidth": 390,
+    "width": 390
+  }
+}

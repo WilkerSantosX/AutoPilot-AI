@@ -1,3 +1,6 @@
+import { loadCareCockpit } from "../vehicle/careCockpit.js";
+import { renderCareCockpitContent } from "./careCockpitContent.js";
+
 export function renderCockpitScreen({ profile, answers }) {
     const vehicleName = escapeText(`${profile.manufacturer} ${profile.model} · ${profile.year} · ${profile.engine}`);
     const actions = [
@@ -19,7 +22,7 @@ export function renderCockpitScreen({ profile, answers }) {
         {
             icon: "bi-clock-history",
             title: "Histórico",
-            description: "Registro de eventos do veículo ainda indisponível."
+            description: "Consulta completa do histórico ainda indisponível."
         }
     ];
 
@@ -48,11 +51,13 @@ export function renderCockpitScreen({ profile, answers }) {
                         Este é o resumo da sua jornada com o
                         <strong>${vehicleName}</strong>.
                     </p>
-                    <p class="cockpit-subtitle">Quilometragem informada: ${escapeText(profile.mileage)} km</p>
+                    <p class="cockpit-subtitle">Quilometragem informada: ${escapeText(profile.mileage)} km (no cadastro)</p>
                     ${profile.nickname ? `<p class="cockpit-subtitle">Apelido: ${escapeText(profile.nickname)}</p>` : ""}
                 </header>
 
-                <section class="cockpit-status-card">
+                ${renderCareCockpitContent(loadCareCockpit(profile.id))}
+
+                ${answers ? `<section class="cockpit-status-card">
                     <div class="cockpit-status-header">
                         <div class="cockpit-status-indicator">
                             <span class="cockpit-status-dot"></span>
@@ -83,6 +88,8 @@ export function renderCockpitScreen({ profile, answers }) {
                         </span>
                     </div>
                 </section>
+
+                ` : `<p><a class="care-link" href="./">Acessar a jornada de perguntas</a></p>`}
 
                 <section class="cockpit-actions-section">
                     <div class="cockpit-section-heading">

@@ -1,0 +1,5 @@
+{
+  "scenario": "retrospective reference equal to mileage",
+  "preparedOk": true,
+  "saveOk": false
+}

@@ -68,6 +68,8 @@ export function renderQuestionScreen(profile = loadVehicleProfile().profile) {
                 `).join("")}
             </div>
 
+            ${question.type === "vehicle" && profile ? `<p><a href="./?screen=care-cockpit">Ver cuidados deste veículo</a> · <a href="./?screen=care-onboarding">Começar a acompanhar cuidados deste veículo</a></p>` : ""}
+
             <div class="question-footer">
                 <div class="question-progress">
                     <div class="question-progress-header">
